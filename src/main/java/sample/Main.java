@@ -20,7 +20,7 @@ public class Main extends Application {
         //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
         //Scene scene = new Scene(fxmlLoader.load());
         PrimaryStage.setScene(new Scene(root));
-        PrimaryStage.setTitle("ManaGenie!");
+        PrimaryStage.setTitle("ManaGenie!!");
         PrimaryStage.show();
     }
     public void changeScene(String fxml) throws IOException{
