@@ -37,23 +37,30 @@
                <font>
                   <Font name="Calibri" size="12.0" />
                </font></Button>
+            <Label layoutX="56.0" layoutY="255.0" prefHeight="17.0" prefWidth="139.0" text="Do you have an account?" textFill="WHITE" />
+            <Label layoutX="96.0" layoutY="272.0" text="Sign up" textFill="#b1d6f7" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="1.0" prefHeight="332.0" prefWidth="294.0">
+      <AnchorPane layoutY="5.0" prefHeight="332.0" prefWidth="294.0">
          <children>
-            <Label contentDisplay="CENTER" layoutX="23.0" layoutY="148.0" opacity="0.55" prefHeight="37.0" prefWidth="229.0" text="&quot;Live as if you were to die tomorrow. " textFill="#0e1d56">
+            <Label contentDisplay="CENTER" layoutX="23.0" layoutY="161.0" opacity="0.55" prefHeight="37.0" prefWidth="229.0" text="&quot;Live as if you were to die tomorrow. " textFill="#0e1d56">
                <font>
                   <Font name="Elephant Italic" size="12.0" />
                </font></Label>
-            <Label layoutX="60.0" layoutY="84.0" opacity="0.89" text="Quote of the day" textFill="#0e1d56">
+            <Label layoutX="83.0" layoutY="108.0" opacity="0.89" text="Quote of the day" textFill="#0e1d56">
                <font>
                   <Font name="Elephant Italic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="28.0" layoutY="177.0" opacity="0.67" text=" Learn as if you were to live forever.&quot;" textFill="#0e1d56">
+            <Label layoutX="28.0" layoutY="198.0" opacity="0.67" text=" Learn as if you were to live forever.&quot;" textFill="#0e1d56">
                <font>
                   <Font name="Elephant Italic" size="12.0" />
                </font></Label>
+            <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Logo.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </children>
 </AnchorPane>
