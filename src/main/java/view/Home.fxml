@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
    <children>
@@ -18,22 +18,68 @@
             <Image url="@../../resources/img/Logo.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="profile" fitHeight="32.0" fitWidth="32.0" layoutX="594.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <Button contentDisplay="TOP" layoutX="69.0" layoutY="85.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="79.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/com/example/project1/img/Icons/Icons/user.png" />
+            <Image url="@../../resources/com/example/project1/img/Icons/Icons/books.png" />
          </image>
       </ImageView>
-      <Button fitHeight="50.0" fitWidth="30.0" layoutX="103.0" layoutY="98.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="217.0" style="-fx-background-color: #94aace;" text="Course">
+      <Button layoutX="262.0" layoutY="86.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Students">
          <graphic>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/com/example/project1/img/Icons/Icons/books.png" />
+                  <Image url="@../../resources/com/example/project1/img/Icons/Icons/graduated.png" />
                </image>
             </ImageView>
          </graphic>
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
+      </Button>
+      <Button layoutX="460.0" layoutY="85.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER" />
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="470.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/com/example/project1/img/Icons/Icons/calendar-.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="69.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="To Do-List" />
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="79.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/com/example/project1/img/Icons/Icons/task.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="262.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Grades">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/com/example/project1/img/Icons/Icons/test.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="461.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Absence" />
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="469.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/com/example/project1/img/Icons/Icons/absent.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="582.0" layoutY="4.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #94aace;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/com/example/project1/img/Icons/Icons/user.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="4.0" layoutY="285.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: #1c388e;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/com/example/project1/img/Icons/Icons/help-web-button.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>
