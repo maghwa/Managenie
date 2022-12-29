@@ -29,7 +29,7 @@ public class Login {
         Main m = new Main();
         if (username.getText().toString().equals("marwa") && password.getText().toString().equals("2022")) {
             wrongLogin.setText("Sucess!!");
-            //m.changeScene("Home.fxml");
+            m.changeScene("Home.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wrongLogin.setText("Please enter your data");
         } else {
