@@ -15,7 +15,7 @@
          <image>
             <Image url="@../../../../../Managenie/src/main/resources/img/Background_flou.png" />
          </image></ImageView>
-      <AnchorPane layoutX="326.0" prefHeight="341.0" prefWidth="261.0">
+      <AnchorPane layoutX="379.0" prefHeight="341.0" prefWidth="261.0">
          <children>
             <Label fx:id="wrongLogin" layoutX="111.0" layoutY="57.0" textFill="#e41515" />
             <Label layoutX="85.0" layoutY="144.0" text="Password:" textFill="#0e1d56">
@@ -38,12 +38,12 @@
                   <Font name="Calibri" size="12.0" />
                </font></Button>
             <Label layoutX="56.0" layoutY="255.0" prefHeight="17.0" prefWidth="139.0" text="Do you have an account?" textFill="WHITE" />
-            <Label layoutX="96.0" layoutY="289.0" text="Sign up" textFill="#b1d6f7" />
+            <Button fx:id="buttton1" layoutX="94.0" layoutY="278.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: #1d326e;" text="Sing up" textFill="#b1d6f7" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="-4.0" prefHeight="349.0" prefWidth="301.0">
          <children>
-            <Label contentDisplay="CENTER" layoutX="28.0" layoutY="148.0" opacity="0.55" prefHeight="37.0" prefWidth="229.0" text="&quot;Live as if you were to die tomorrow. " textFill="#0e1d56">
+            <Label contentDisplay="CENTER" layoutX="41.0" layoutY="138.0" opacity="0.74" prefHeight="37.0" prefWidth="229.0" text="&quot;Live as if you were to die tomorrow. " textFill="#0e1d56">
                <font>
                   <Font name="Elephant Italic" size="12.0" />
                </font></Label>
@@ -52,7 +52,7 @@
                   <Font name="Elephant Italic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="38.0" layoutY="185.0" opacity="0.67" text=" Learn as if you were to live forever.&quot;" textFill="#0e1d56">
+            <Label layoutX="38.0" layoutY="175.0" opacity="0.67" text=" Learn as if you were to live forever.&quot;" textFill="#0e1d56">
                <font>
                   <Font name="Elephant Italic" size="12.0" />
                </font></Label>

@@ -9,7 +9,6 @@ import javafx.event.*;
 import java.io.IOException;
 public class Login {
     public Login() {
-
     }
 
     @FXML
@@ -21,8 +20,21 @@ public class Login {
     @FXML
     private TextField password;
 
+    @FXML
+    private Button button1;
+
     public void userLogin(ActionEvent event) throws IOException {
         checkLogin();
+    }
+
+    public void SignUp(ActionEvent event) throws IOException {
+        checkSignUp();
+
+    }
+
+    private void checkSignUp() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("SignUp.fxml");
     }
 
     private void checkLogin() throws IOException {

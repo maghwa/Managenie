@@ -18,7 +18,7 @@
             <Image url="@../../resources/img/Logo.png" />
          </image>
       </ImageView>
-      <Button contentDisplay="TOP" layoutX="69.0" layoutY="85.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
+      <Button fx:id="course" contentDisplay="TOP" layoutX="69.0" layoutY="85.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
          <effect>
             <Blend />
          </effect>
@@ -28,7 +28,7 @@
             <Image url="@../../resources/com/example/project1/img/Icons/Icons/books.png" />
          </image>
       </ImageView>
-      <Button layoutX="262.0" layoutY="86.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Students">
+      <Button fx:id="students" layoutX="262.0" layoutY="86.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Students">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,19 +37,19 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="460.0" layoutY="85.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER" />
+      <Button fx:id="schedule" layoutX="460.0" layoutY="85.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER" />
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="470.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/com/example/project1/img/Icons/Icons/calendar-.png" />
          </image>
       </ImageView>
-      <Button layoutX="69.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="To Do-List" />
+      <Button fx:id="todo_list" layoutX="69.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="To Do-List" />
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="79.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/com/example/project1/img/Icons/Icons/task.png" />
          </image>
       </ImageView>
-      <Button layoutX="262.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Grades">
+      <Button fx:id="grades" layoutX="262.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Grades">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -58,13 +58,13 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="461.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Absence" />
+      <Button fx:id="absence" layoutX="461.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Absence" />
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="469.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/com/example/project1/img/Icons/Icons/absent.png" />
          </image>
       </ImageView>
-      <Button layoutX="582.0" layoutY="4.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #94aace;">
+      <Button fx:id="profile" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #94aace;">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -72,7 +72,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="4.0" layoutY="285.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: #1c388e;">
+      <Button fx:id="help" layoutX="4.0" layoutY="285.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="37.0" style="-fx-background-color: #1c388e;">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
