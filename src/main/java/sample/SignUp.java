@@ -33,7 +33,7 @@ public class SignUp {
         Main m2 = new Main();
         if (username.getText().toString().equals("maghwa") && password.getText().toString().equals("2022") && firstname.getText().toString().equals("marwa")&& lastname.getText().toString().equals("elkamil")&& confirmationpassword.getText().toString().equals("2022")) {
             wrongSignup.setText("Sucess!!");
-            m2.changeScene("Home.fxml");
+            m2.changeScene("view/Home.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wrongSignup.setText("Please enter your data");
         } else {

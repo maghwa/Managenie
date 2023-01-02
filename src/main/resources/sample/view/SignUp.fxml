@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="338.0" fitWidth="679.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/img/Background_flou.png" />
+            <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="323.0" layoutY="10.0" prefHeight="341.0" prefWidth="327.0">
@@ -76,7 +76,7 @@
             </Label>
             <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/img/Logo.png" />
+                  <Image url="@../img/Logo.png" />
                </image>
             </ImageView>
          </children>

@@ -14,9 +14,10 @@ public class Main extends Application {
     private static Stage stg;
     @Override
     public void start(Stage primaryStage) throws Exception {
+        stg = primaryStage;
         primaryStage.setResizable(true);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
-        fxmlLoader.setRoot(new AnchorPane());
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/Login.fxml"));
+        //fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("ManaGenie!!");
@@ -24,7 +25,7 @@ public class Main extends Application {
     }
        public void changeScene(String fxml) throws IOException {
        Parent pane= FXMLLoader.load(getClass().getResource(fxml));
-       stg.getScene().setRoot(pane);
+       stg.setScene(new Scene(pane));
    }
     public static void main(String[] args) {
         launch(args);
