@@ -45,7 +45,7 @@ public class Login {
 
     private void checkSignUp() throws IOException {
         Main m1 = new Main();
-        m1.changeScene("SignUp.fxml");
+        m1.changeScene("view/SignUp.fxml");
     }
 
     private void checkLogin() throws IOException {
