@@ -6,73 +6,84 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
    <children>
-      <ImageView fitHeight="337.0" fitWidth="646.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="636.0" fitWidth="992.0" layoutX="-4.0" layoutY="-8.0">
          <image>
             <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="71.0" fitWidth="82.0" layoutX="2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
          <image>
-            <Image url="@../img/Logo.png" />
+            <Image url="@../Icons/Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="course" contentDisplay="TOP" layoutX="69.0" layoutY="85.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
+      <Button fx:id="course" contentDisplay="TOP" layoutX="249.0" layoutY="207.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
          <effect>
             <Blend />
          </effect>
-      </Button>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="79.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/books.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="students" layoutX="262.0" layoutY="86.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Students">
          <graphic>
-            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/books.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="students" contentDisplay="TOP" layoutX="447.0" layoutY="206.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Students">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/graduated.png" />
                </image>
             </ImageView>
          </graphic>
+         <effect>
+            <Blend />
+         </effect>
       </Button>
-      <Button fx:id="schedule" layoutX="460.0" layoutY="85.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER" />
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="470.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/calendar-.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="todo_list" layoutX="69.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="To Do-List" />
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="79.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/task.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="grades" layoutX="262.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Grades">
+      <Button fx:id="schedule" contentDisplay="TOP" layoutX="644.0" layoutY="206.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER">
          <graphic>
-            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="66.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/calendar.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="todo_list" contentDisplay="TOP" layoutX="249.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="To Do-List">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/task.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="grades" contentDisplay="TOP" layoutX="448.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Grades">
+         <graphic>
+            <ImageView fitHeight="75.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/test.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="absence" layoutX="461.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #94aace;" text="Absence" />
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="469.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/absent.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="profile" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #94aace;">
+      <Button fx:id="absence" contentDisplay="TOP" layoutX="644.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Absence">
          <graphic>
-            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="68.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/absent.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="profile" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+         <graphic>
+            <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/user.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="help" layoutX="4.0" layoutY="285.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="37.0" style="-fx-background-color: #1c388e;">
+      <Button fx:id="help" layoutX="3.0" layoutY="579.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="37.0" style="-fx-background-color: #ffffff10;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.leftAnchor="3.0">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>

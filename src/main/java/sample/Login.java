@@ -12,16 +12,23 @@ public class Login {
     }
 
     @FXML
-    private Button button;
-    @FXML
-    private Label wrongLogin;
-    @FXML
-    private TextField username;
-    @FXML
-    private TextField password;
+    private Hyperlink ForgotPwd;
 
     @FXML
-    private Button button1;
+    private Button Login;
+
+    @FXML
+    private Hyperlink Signup;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField username;
+
+    @FXML
+    private Label wrongLogin;
+
 
     public void userLogin(ActionEvent event) throws IOException {
         checkLogin();
