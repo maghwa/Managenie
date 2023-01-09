@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="154.0" style="-fx-background-color: #1d326e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="5.0" layoutY="92.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="142.0" style="-fx-background-color: #1d326e;" text="Upload" textFill="#b1d6f7">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0">
+               <image>
+                  <Image url="@../Icons/cloud-computing%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+      </Button>
+      <Button layoutX="5.0" layoutY="184.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="142.0" style="-fx-background-color: #1d326e;" text="Modify" textFill="#b1d6f7">
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="65.0">
+               <image>
+                  <Image url="@../Icons/edit%20(2).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+      </Button>
+      <Button layoutX="5.0" layoutY="275.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="142.0" style="-fx-background-color: #1d326e;" text="Delete" textFill="#b1d6f7">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0">
+               <image>
+                  <Image url="@../Icons/rubbish-bin%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+      </Button>
+      <Button layoutX="5.0" layoutY="14.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="142.0" style="-fx-background-color: #1d326e;" text="View" textAlignment="JUSTIFY" textFill="#b1d6f7">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0">
+               <image>
+                  <Image url="@../Icons/eyes.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets right="5.0" />
+         </opaqueInsets>
+      </Button>
+   </children>
+</AnchorPane>

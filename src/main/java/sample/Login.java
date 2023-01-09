@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.stage.*;
 import javafx.event.*;
 
@@ -13,6 +14,9 @@ public class Login {
 
     @FXML
     private Hyperlink ForgotPwd;
+
+    @FXML
+    private ImageView warning;
 
     @FXML
     private Button Login;
@@ -51,6 +55,7 @@ public class Login {
             m.changeScene("view/Home.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wrongLogin.setText("Please enter your data");
+            warning.setVisible(true);
         } else {
             wrongLogin.setText("Wrong username or password!");
         }

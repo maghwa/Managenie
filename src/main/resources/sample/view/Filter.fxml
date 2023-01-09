@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="354.0" style="-fx-background-color: #1d326e;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="87.0" layoutY="59.0" prefHeight="174.0" prefWidth="179.0">
+         <children>
+            <Label text="Course" textFill="#b1d6f7" />
+            <ChoiceBox fx:id="choiceCourse" prefHeight="30.0" prefWidth="173.0" />
+            <Label text="Class" textFill="#b1d6f7" />
+            <ChoiceBox fx:id="choiceClass" prefHeight="34.0" prefWidth="174.0" />
+            <Label prefHeight="18.0" prefWidth="37.0" text="Date" textFill="#b1d6f7" />
+            <DatePicker fx:id="DatePicker" prefHeight="34.0" prefWidth="174.0" />
+         </children>
+      </VBox>
+      <Button fx:id="GoButton" layoutX="135.0" layoutY="239.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1d326e; -fx-border-color: #000a2c; -fx-border-radius: 15;" text="GO" textFill="#b1d6f7" />
+   </children>
+</AnchorPane>
