@@ -31,7 +31,7 @@ public class Login {
     private TextField username;
 
     @FXML
-    private Label wrongLogin;
+    private Label loginMessageLabel;
 
 
     public void userLogin(ActionEvent event) throws IOException {
@@ -51,13 +51,12 @@ public class Login {
     private void checkLogin() throws IOException {
         Main m = new Main();
         if (username.getText().toString().equals("marwa") && password.getText().toString().equals("2022")) {
-            wrongLogin.setText("Sucess!!");
+            loginMessageLabel.setText("Sucess!!");
             m.changeScene("view/Home.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
-            wrongLogin.setText("Please enter your data");
-            warning.setVisible(true);
+            loginMessageLabel.setText("Please enter your data");
         } else {
-            wrongLogin.setText("Wrong username or password!");
+            loginMessageLabel.setText("Wrong username or password!");
         }
     }
 }

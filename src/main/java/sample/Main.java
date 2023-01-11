@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class Main extends Application {
         //fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("ManaGenie!!");
         primaryStage.show();
     }

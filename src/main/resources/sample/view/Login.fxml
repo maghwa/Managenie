@@ -1,66 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login">
    <children>
-      <ImageView fitHeight="332.0" fitWidth="640.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="634.0" fitWidth="990.0" layoutX="-4.0" layoutY="-8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../img/Background_flou.png" />
-         </image></ImageView>
-      <AnchorPane layoutX="379.0" prefHeight="341.0" prefWidth="261.0">
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="529.0" layoutY="58.0" prefHeight="514.0" prefWidth="426.0" style="-fx-background-color: #ffffff20; -fx-border-radius: 15;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="529.0" AnchorPane.rightAnchor="25.600000000000023" AnchorPane.topAnchor="58.0">
          <children>
-            <Label fx:id="wrongLogin" layoutX="111.0" layoutY="57.0" textFill="#e41515" />
-            <Label layoutX="85.0" layoutY="144.0" text="Password:" textFill="#0e1d56">
+            <Label layoutX="190.0" layoutY="30.0" prefHeight="26.0" prefWidth="83.0" text=" Log in" textFill="#0e1d56" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="172.0" AnchorPane.topAnchor="30.0">
                <font>
-                  <Font name="Calibri" size="15.0" />
-               </font></Label>
-            <Label layoutX="83.0" layoutY="80.0" text="Username:" textFill="#0e1d56">
-               <font>
-                  <Font name="Calibri" size="15.0" />
-               </font></Label>
-            <Label layoutX="3.0" layoutY="21.0" text="________*  Log in *__________" textFill="#0e1d56">
-               <font>
-                  <Font name="Cooper Black" size="17.0" />
+                  <Font name="Cooper Black" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="48.0" layoutY="107.0" promptText="enter your username" />
-            <PasswordField fx:id="password" layoutX="48.0" layoutY="171.0" prefHeight="17.0" prefWidth="149.0" promptText="enter your password" />
-            <Button fx:id="button" layoutX="76.0" layoutY="216.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #1d326e;" text="Login" textFill="#b1d6f7">
+            <PasswordField fx:id="password" layoutX="134.0" layoutY="269.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your password" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="135.0" />
+            <TextField fx:id="username" layoutX="134.0" layoutY="171.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your username" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="134.0" AnchorPane.rightAnchor="136.0" />
+            <Button fx:id="Login" layoutX="163.0" layoutY="336.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #1d326e; -fx-background-radius: 15; -fx-border-radius: 15;" text="Login" textFill="#b1d6f7" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="164.0">
                <font>
-                  <Font name="Calibri" size="12.0" />
-               </font></Button>
-            <Label layoutX="56.0" layoutY="255.0" prefHeight="17.0" prefWidth="139.0" text="Do you have an account?" textFill="WHITE" />
-            <Button fx:id="buttton1" layoutX="94.0" layoutY="278.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: #1d326e;" text="Sing up" textFill="#b1d6f7" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutY="-4.0" prefHeight="349.0" prefWidth="301.0">
-         <children>
-            <Label contentDisplay="CENTER" layoutX="41.0" layoutY="138.0" opacity="0.74" prefHeight="37.0" prefWidth="229.0" text="&quot;Live as if you were to die tomorrow. " textFill="#0e1d56">
-               <font>
-                  <Font name="Elephant Italic" size="12.0" />
-               </font></Label>
-            <Label layoutX="83.0" layoutY="108.0" opacity="0.89" text="Quote of the day" textFill="#0e1d56">
-               <font>
-                  <Font name="Elephant Italic" size="16.0" />
+                  <Font size="20.0" />
                </font>
-            </Label>
-            <Label layoutX="38.0" layoutY="175.0" opacity="0.67" text=" Learn as if you were to live forever.&quot;" textFill="#0e1d56">
-               <font>
-                  <Font name="Elephant Italic" size="12.0" />
-               </font></Label>
-            <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            </Button>
+            <Line endX="100.0" layoutX="53.0" layoutY="46.0" startX="2.4000244140625" startY="7.62939453125E-6" stroke="#000a2c" />
+            <Line endX="100.0" layoutX="269.0" layoutY="46.0" startX="2.4000244140625" startY="7.62939453125E-6" stroke="#000a2c" />
+            <Circle fill="#000a2c" layoutX="160.0" layoutY="46.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#000a2c" layoutX="265.0" layoutY="46.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Hyperlink fx:id="Signup" layoutX="275.0" layoutY="397.0" text=" Sign up" textFill="WHITE" />
+            <Label layoutX="135.0" layoutY="396.0" prefHeight="24.0" prefWidth="140.0" text="Do you have an account?" textFill="#f7f4f4" />
+            <Label fx:id="loginMessageLabel" layoutX="199.0" layoutY="75.0" textFill="#fb0a0a" />
+            <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="86.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/Logo.png" />
+                  <Image url="@../Icons/USERR.png" />
                </image>
             </ImageView>
-         </children></AnchorPane>
+            <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="86.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/password.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="5.0" prefHeight="625.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="465.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="27.0" layoutY="269.0" opacity="0.84" prefHeight="98.0" prefWidth="462.0" text="&quot;Live as if you were to die tomorrow.  " textFill="#000a2c" AnchorPane.bottomAnchor="258.20000000000005" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="269.0">
+               <font>
+                  <Font name="Elephant Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="132.0" layoutY="177.0" opacity="0.89" prefHeight="58.0" prefWidth="250.0" text="  Quote of the day" textAlignment="CENTER" textFill="#0e1d56" AnchorPane.bottomAnchor="389.6" AnchorPane.leftAnchor="131.99999999999997" AnchorPane.rightAnchor="133.6" AnchorPane.topAnchor="177.0">
+               <font>
+                  <Font name="Elephant Italic" size="26.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Label layoutX="194.0" layoutY="329.0" opacity="0.93" prefHeight="26.0" prefWidth="294.0" text="Learn as if you were to live forever.&quot;" textFill="#0e1d56">
+               <font>
+                  <Font name="Elephant Italic" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="71.0" fitWidth="89.0" layoutX="14.0" layoutY="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="7.0">
+               <image>
+                  <Image url="@../Icons/Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
