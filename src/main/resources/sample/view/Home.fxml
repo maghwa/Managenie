@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Home">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
    <children>
       <ImageView fitHeight="636.0" fitWidth="992.0" layoutX="-4.0" layoutY="-8.0">
          <image>
@@ -30,7 +30,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="students" contentDisplay="TOP" layoutX="447.0" layoutY="206.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Students">
+      <Button fx:id="students" contentDisplay="TOP" layoutX="447.0" layoutY="206.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Students" onAction="#student">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -50,7 +50,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="todo_list" contentDisplay="TOP" layoutX="249.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="To Do-List">
+      <Button fx:id="todo_list" contentDisplay="TOP" layoutX="249.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="To Do-List" onAction="#todoList">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -58,7 +58,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="grades" contentDisplay="TOP" layoutX="448.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Grades">
+      <Button fx:id="grades" contentDisplay="TOP" layoutX="448.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Grades" onAction="#grades">
          <graphic>
             <ImageView fitHeight="75.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -67,7 +67,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="absence" contentDisplay="TOP" layoutX="644.0" layoutY="347.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Absence">
+      <Button fx:id="absence" contentDisplay="TOP" layoutX="644.0" layoutY="347.0" mnemonicParsing="false" onAction="#absence" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Absence">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>

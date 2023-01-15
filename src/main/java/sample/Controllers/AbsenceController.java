@@ -1,11 +1,11 @@
-package sample;
+package sample.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.image.ImageView;
 
-public class Absence {
+public class AbsenceController {
 
 
 
@@ -88,7 +88,7 @@ public class Absence {
     private Button Validate;
 
 
-    public Absence(){
+    public AbsenceController(){
 
     }
 

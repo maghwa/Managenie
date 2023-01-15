@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUp">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SignUp">
    <children>
       <ImageView fitHeight="634.0" fitWidth="990.0" layoutX="-4.0" layoutY="-8.0">
          <image>
@@ -22,7 +22,6 @@
       </ImageView>
       <AnchorPane layoutX="540.0" layoutY="61.0" prefHeight="514.0" prefWidth="426.0" style="-fx-background-color: #ffffff20; -fx-border-radius: 15;" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="540.0" AnchorPane.rightAnchor="14.600000000000023" AnchorPane.topAnchor="61.0">
          <children>
-            <Label fx:id="wrongLogin" layoutX="111.0" layoutY="57.0" textFill="#e41515" />
             <Label layoutX="85.0" layoutY="177.0" prefHeight="26.0" prefWidth="82.0" text="Last Name" textFill="#0e1d56" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="259.0">
                <font>
                   <Font name="Calibri" size="15.0" />
@@ -38,13 +37,13 @@
                   <Font name="Cooper Black" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="223.0" layoutY="117.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your first name" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-border-radius: 15; -fx-background-radius: 15;" AnchorPane.bottomAnchor="347.6" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" AnchorPane.topAnchor="117.0" />
+            <TextField fx:id="firstName" layoutX="223.0" layoutY="117.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your first name" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-border-radius: 15; -fx-background-radius: 15;" AnchorPane.bottomAnchor="347.6" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" AnchorPane.topAnchor="117.0" />
             <Label layoutX="85.0" layoutY="230.0" prefHeight="26.0" prefWidth="82.0" text="Username" textFill="#0e1d56" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="259.0">
                <font>
                   <Font name="Calibri" size="15.0" />
                </font>
             </Label>
-            <PasswordField fx:id="password1" layoutX="223.0" layoutY="283.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your password" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
+            <PasswordField fx:id="password" layoutX="223.0" layoutY="283.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your password" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
             <Label layoutX="85.0" layoutY="289.0" prefHeight="26.0" prefWidth="82.0" text="Password" textFill="#0e1d56" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="259.0">
                <font>
                   <Font name="Calibri" size="15.0" />
@@ -55,10 +54,10 @@
                   <Font name="Calibri" size="15.0" />
                </font>
             </Label>
-            <PasswordField fx:id="password11" layoutX="223.0" layoutY="338.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your password confirmation" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-border-radius: 15; -fx-background-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
-            <TextField fx:id="username1" layoutX="222.0" layoutY="171.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your last name" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-border-radius: 15; -fx-background-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
-            <TextField fx:id="username2" layoutX="223.0" layoutY="224.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your username" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
-            <Button layoutX="174.0" layoutY="404.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #1d326e; -fx-background-radius: 15; -fx-border-radius: 15;" text="Register" textFill="#b1d6f7" AnchorPane.bottomAnchor="55.80000000000001" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="153.0" onAction="#Register">
+            <PasswordField fx:id="password2" layoutX="223.0" layoutY="338.0" prefHeight="38.0" prefWidth="156.0" promptText="re-enter your password " style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-border-radius: 15; -fx-background-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
+            <TextField fx:id="lastName" layoutX="222.0" layoutY="171.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your last name" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-border-radius: 15; -fx-background-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
+            <TextField fx:id="username" layoutX="223.0" layoutY="224.0" prefHeight="38.0" prefWidth="156.0" promptText="enter your username" style="-fx-background-color: #ffffff10; -fx-border-color: #b1d6f7; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="47.39999999999998" />
+            <Button fx:id="button2" layoutX="174.0" layoutY="404.0" mnemonicParsing="false" onAction="#Register" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #1d326e; -fx-background-radius: 15; -fx-border-radius: 15;" text="Register" textFill="#b1d6f7" AnchorPane.bottomAnchor="55.80000000000001" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="153.0">
                <font>
                   <Font size="20.0" />
                </font></Button>
@@ -66,8 +65,9 @@
             <Line endX="100.0" layoutX="297.0" layoutY="46.0" startX="2.4000244140625" startY="7.62939453125E-6" />
             <Circle fill="#000a2c" layoutX="160.0" layoutY="46.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="#000a2c" layoutX="293.0" layoutY="46.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Hyperlink layoutX="274.0" layoutY="455.0" text="Login" textFill="WHITE" />
+            <Hyperlink fx:id="login" layoutX="274.0" layoutY="455.0" onAction="#Register" text="Login" textFill="WHITE" />
             <Label layoutX="140.0" layoutY="458.0" text="Do you have an account?" textFill="WHITE" />
+            <Label fx:id="wrongSignup" layoutX="186.0" layoutY="69.0" textFill="RED" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="5.0" prefHeight="625.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="465.0" AnchorPane.topAnchor="0.0">

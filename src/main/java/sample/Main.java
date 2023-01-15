@@ -18,7 +18,7 @@ public class Main extends Application {
         stg = primaryStage;
         primaryStage.setResizable(true);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/Login.fxml"));
-        //fxmlLoader.setRoot(new AnchorPane());
+        fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
         //primaryStage.initStyle(StageStyle.UNDECORATED);

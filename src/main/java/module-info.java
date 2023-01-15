@@ -7,4 +7,6 @@ module com.example.project1 {
 
     opens sample to javafx.fxml;
     exports sample;
+    exports sample.Controllers;
+    opens sample.Controllers to javafx.fxml;
 }
