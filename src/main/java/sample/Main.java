@@ -22,7 +22,7 @@ public class Main extends Application {
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setTitle("ManaGenie!!");
+        primaryStage.setTitle("ManaGenie!");
         primaryStage.show();
     }
        public void changeScene(String fxml) throws IOException {
