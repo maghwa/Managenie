@@ -5,31 +5,21 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SliderController">
    <children>
       <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-14.0" layoutY="-18.0">
          <image>
             <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
-      <Pane layoutX="2.0" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="MenuSlider" layoutX="2.0" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox prefHeight="612.0" prefWidth="63.0">
                <children>
-                  <Button fx:id="HomeAbsence" mnemonicParsing="false" style="-fx-background-color: #ffffff10;">
-                     <graphic>
-                        <ImageView fx:id="MenuIcon" fitHeight="28.0" fitWidth="27.0">
-                           <image>
-                              <Image url="@../Icons/menu-burger%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <Button fx:id="Home" mnemonicParsing="false" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
@@ -152,8 +142,11 @@
                   </Button>
                </children>
                <opaqueInsets>
-                  <Insets left="10.0" />
+                  <Insets left="10.0" top="60.0" />
                </opaqueInsets>
+               <padding>
+                  <Insets top="60.0" />
+               </padding>
             </VBox>
          </children>
       </Pane>
@@ -166,10 +159,14 @@
             </ImageView>
          </graphic>
       </Button>
-      <HBox layoutX="473.0" layoutY="96.0" prefHeight="26.0" prefWidth="291.0" AnchorPane.leftAnchor="473.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="96.0">
-         <padding>
-            <Insets right="10.0" />
-         </padding>
-      </HBox>
+      <Button fx:id="MenuBOpen" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Menu" style="-fx-background-color: #ffffff10;" AnchorPane.bottomAnchor="569.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fx:id="MenuIconOpen" fitHeight="28.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../Icons/menu-burger%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

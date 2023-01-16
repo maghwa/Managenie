@@ -1,10 +1,16 @@
 package sample.Controllers;
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class GradesController {
+        int i=0;
         @FXML
         private Button MenuB;
 
@@ -13,9 +19,6 @@ public class GradesController {
 
         @FXML
         private Pane MenuSlider;
-
-        @FXML
-        private ImageView MenuIcon1;
 
         @FXML
         private Button Home;
@@ -77,6 +80,62 @@ public class GradesController {
         @FXML
         private ImageView EditIcon;
 
-    }
+        @FXML
+        void Menu(ActionEvent event) {
+
+                i++;
+
+                TranslateTransition slide = new TranslateTransition();
+                if (i % 2 != 0) {
+                        MenuSlider.setTranslateX(-60);
+                        slide.setDuration(Duration.seconds(0.4));
+                        slide.setNode(MenuSlider);
+
+                        slide.play();
+
+
+                }
+                else if (i % 2 == 0) {
+                        slide.setDuration(Duration.seconds(0.4));
+                        slide.setNode(MenuSlider);
+
+                        slide.setToX(0);
+                        slide.play();
+                        MenuSlider.setTranslateX(60);
+
+
+                }
+        }
+
+
+        /*@FXML
+        void GoHelp(ActionEvent event) throws IOException {
+                HomeController.checkHelp();
+
+        }
+
+        @FXML
+        void GoProfile(ActionEvent event) throws IOException {
+                HomeController.checkProfile();
+
+        }*/
+
+
+
+
+   /*     @FXML
+        void goHome(ActionEvent event) throws IOException {
+                HomeController.checkHome();
+
+        }
+
+        @FXML
+        void goSchedule(ActionEvent event) throws IOException {
+                HomeController.checkSchedule();
+        }*/
+
+}
+
+
 
 

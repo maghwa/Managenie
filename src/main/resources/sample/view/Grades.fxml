@@ -16,14 +16,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.GradesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.GradesController">
    <children>
       <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-14.0" layoutY="-18.0">
          <image>
             <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
-      <Button fx:id="MenuB" mnemonicParsing="false" style="-fx-background-color: #ffffff10;">
+      <Button fx:id="MenuBOpen" mnemonicParsing="false" onAction="#Menu" style="-fx-background-color: #ffffff10;">
          <graphic>
             <ImageView fx:id="MenuIcon" fitHeight="28.0" fitWidth="27.0">
                <image>
@@ -32,19 +32,10 @@
             </ImageView>
          </graphic>
       </Button>
-      <Pane fx:id="MenuSlider" layoutX="2.0" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="MenuSlider" layoutX="2.0" onDragDetected="#Menu" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox prefHeight="612.0" prefWidth="63.0">
                <children>
-                  <Button fx:id="MenuB" mnemonicParsing="false" style="-fx-background-color: #ffffff10;">
-                     <graphic>
-                        <ImageView fx:id="MenuIcon1" fitHeight="28.0" fitWidth="27.0">
-                           <image>
-                              <Image url="@../Icons/menu-burger%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <Button fx:id="Home" mnemonicParsing="false" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
@@ -157,6 +148,9 @@
                <opaqueInsets>
                   <Insets left="10.0" />
                </opaqueInsets>
+               <padding>
+                  <Insets top="60.0" />
+               </padding>
             </VBox>
          </children>
       </Pane>
@@ -174,6 +168,15 @@
             <Insets right="10.0" />
          </padding>
       </HBox>
+      <Button fx:id="MenuBOpen" mnemonicParsing="false" onAction="#Menu" style="-fx-background-color: #ffffff10;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fx:id="MenuIcon1" fitHeight="28.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../Icons/menu-burger%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
       <AnchorPane centerShape="false" focusTraversable="true" layoutX="10.0" layoutY="10.0" prefHeight="625.0" prefWidth="981.0" style="-fx-background-color: transparent;">
          <children>
             <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="438.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
@@ -220,7 +223,7 @@
             </MenuButton>
             <TextField layoutX="207.0" layoutY="113.0" prefHeight="35.0" prefWidth="319.0" promptText="Search" style="-fx-background-radius: 15;" />
             <Button layoutX="500.0" layoutY="118.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
-            <TableView id="table" layoutX="207.0" layoutY="162.0" prefHeight="390.0" prefWidth="602.0" style="-fx-background-color: #b1d6f7;">
+            <TableView id="table" layoutX="207.0" layoutY="162.0" prefHeight="390.0" prefWidth="602.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 20; -fx-border-radius: 20;">
                <columns>
                   <TableColumn id="Student" prefWidth="303.1999969482422" style="-fx-background-color: #b1d6f7;" text="Student" />
                   <TableColumn id="Grade" minWidth="0.0" prefWidth="299.20001220703125" style="-fx-background-color: #b1d6f7;" text="Grade" />
