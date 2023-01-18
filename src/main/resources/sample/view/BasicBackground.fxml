@@ -2,6 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SliderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.BasicController">
    <children>
       <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-14.0" layoutY="-18.0">
          <image>
@@ -20,7 +23,7 @@
          <children>
             <VBox prefHeight="612.0" prefWidth="63.0">
                <children>
-                  <Button fx:id="Home" mnemonicParsing="false" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Home" mnemonicParsing="false" onAction="#GoHome" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -32,7 +35,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Calender" mnemonicParsing="false" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Calender" mnemonicParsing="false" onAction="#GoSchedule" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -44,7 +47,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Courses" mnemonicParsing="false" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Courses" mnemonicParsing="false" onAction="#GoCourse" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -56,7 +59,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Grades" mnemonicParsing="false" prefHeight="46.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Grades" mnemonicParsing="false" onAction="#GoGrades" prefHeight="46.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -68,7 +71,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Todolist" mnemonicParsing="false" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Todolist" mnemonicParsing="false" onAction="#GoTodoList" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -80,7 +83,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Absence" mnemonicParsing="false" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textAlignment="CENTER" textFill="#b1d6f7">
+                  <Button fx:id="Absence" mnemonicParsing="false" onAction="#GoAbsence" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textAlignment="CENTER" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -92,7 +95,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Logout1" mnemonicParsing="false" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Logout1" mnemonicParsing="false" onAction="#GoStudent" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -104,7 +107,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Profile" mnemonicParsing="false" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Profile" mnemonicParsing="false" onAction="#GoProfile" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -116,7 +119,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Help" mnemonicParsing="false" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Help" mnemonicParsing="false" onAction="#GoHelp" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -128,7 +131,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Logout" mnemonicParsing="false" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                  <Button fx:id="Logout" mnemonicParsing="false" onAction="#Logout" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -168,5 +171,29 @@
             </ImageView>
          </graphic>
       </Button>
+      <TextField layoutX="217.0" layoutY="123.0" prefHeight="35.0" prefWidth="319.0" promptText="Search" style="-fx-background-radius: 15;" />
+      <ImageView fitHeight="61.0" fitWidth="24.0" layoutX="506.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/magnifier.png" />
+         </image>
+      </ImageView>
+      <MenuButton layoutX="551.0" layoutY="123.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #0e1d56; -fx-background-radius: 10;" text="Course" textFill="#b1d6f7">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+         <font>
+            <Font name="Dubai Bold" size="14.0" />
+         </font>
+      </MenuButton>
+      <MenuButton layoutX="643.0" layoutY="123.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #0e1d56; -fx-background-radius: 10;" text="Class" textFill="#b1d6f7">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+         <font>
+            <Font name="Dubai Bold" size="14.0" />
+         </font>
+      </MenuButton>
    </children>
 </AnchorPane>

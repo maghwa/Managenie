@@ -51,13 +51,14 @@ public class Login {
 
     private void checkLogin() throws IOException {
         Main m = new Main();
-        if (username.getText().toString().equals("marwa") && password.getText().toString().equals("2022")) {
+        m.changeScene("view/Home.fxml");
+        /*if (username.getText().toString().equals("marwa") && password.getText().toString().equals("2022")) {
             loginMessageLabel.setText("Sucess!!");
             m.changeScene("view/Home.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             loginMessageLabel.setText("Please enter your data");
         } else {
             loginMessageLabel.setText("Wrong username or password!");
-        }
+        }*/
     }
 }

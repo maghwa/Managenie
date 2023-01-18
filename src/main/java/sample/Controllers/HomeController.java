@@ -26,57 +26,36 @@ public class HomeController {
     @FXML
     private Button profile;
 
-    public static void checkHome() throws IOException {
-        Main m = new Main();
-        m.changeScene("view/Home.fxml");
-    }
-
-//    public static void checkHome() throws IOException {
-//        Main m = new Main();
-//        m.changeScene("view/Home.fxml");
-//    }
-//
-//    public static void checkLogout() throws IOException {
-//        Main m1 = new Main();
-//        m1.changeScene("view/Logout.fxml");
-//    }
 
 
+
+    //the methods that each button of the  Menubar uses
     public void absence(ActionEvent event) throws IOException {
-        checkAbsence();
+        BasicController.checkAbsence();
     }
 
-    static void checkAbsence() throws IOException {
-        Main m1 = new Main();
-        m1.changeScene("view/AbsencewithMenu.fxml");
-    }
+
 
     public void grades(ActionEvent event) throws IOException {
-        checkGrades();
+        BasicController.checkGrades();
     }
 
-    static void checkGrades() throws IOException {
-        Main m2 = new Main();
-        m2.changeScene("view/Grades.fxml");
-    }
+
 
     public void todoList(ActionEvent event) throws IOException {
-        checkTodoList();
+        BasicController.checkTodoList();
     }
 
-    static void checkTodoList() throws IOException {
-        Main m2 = new Main();
-        m2.changeScene("view/To-Do lists.fxml");
-    }
+
 
     public void student(ActionEvent event) throws IOException {
-        checkStudent();
+        BasicController.checkStudent();
+    }
+    public void course(ActionEvent event) throws IOException{
+        BasicController.checkCourse();
     }
 
-    private void checkStudent() throws IOException {
-        Main m2 = new Main();
-        m2.changeScene("view/StudentInterface.fxml");
-    }
+
     public HomeController() {
 
     }

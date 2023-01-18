@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-14.0" layoutY="-18.0">
+         <image>
+            <Image url="@../img/Background_flou.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="2.0" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="612.0" prefWidth="63.0">
+               <children>
+                  <Button fx:id="HomeAbsence" mnemonicParsing="false" style="-fx-background-color: #ffffff10;">
+                     <graphic>
+                        <ImageView fx:id="MenuIcon" fitHeight="28.0" fitWidth="27.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/menu-burger%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Home" mnemonicParsing="false" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="HomeIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/home%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Calender" mnemonicParsing="false" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="CalenderIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/calendar%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Courses" mnemonicParsing="false" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="CourseIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/books.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Grades" mnemonicParsing="false" prefHeight="46.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="GradesIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/test.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Todolist" mnemonicParsing="false" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="TodolistIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/task.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Absence" mnemonicParsing="false" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textAlignment="CENTER" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="AbsenceIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/absent%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Logout1" mnemonicParsing="false" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="studentIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/graduated.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Profile" mnemonicParsing="false" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="ProfileIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/user%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Help" mnemonicParsing="false" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="HelpIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/help-web-button%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Logout" mnemonicParsing="false" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="LogoutIcon" fitHeight="28.0" fitWidth="28.0">
+                           <image>
+                              <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/logout%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </Pane>
+      <Button fx:id="Edit" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fx:id="EditIcon" fitHeight="30.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/edit%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="course" contentDisplay="TOP" layoutX="99.0" layoutY="265.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="78.0" prefWidth="335.0" style="-fx-background-color: #94aace;" text="Cpp course" textFill="#434040" textOverrun="CLIP" wrapText="true">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="mysearchfld" alignment="TOP_LEFT" layoutX="309.0" layoutY="122.0" opacity="0.61" prefHeight="36.0" prefWidth="432.0" promptText="search" />
+      <Button fx:id="students" layoutX="589.0" layoutY="268.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="335.0" style="-fx-background-color: #94aace;" text="Python course" textFill="#434040">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="63.0" layoutX="125.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/c++.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="103.0" layoutX="519.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="48.0" fitWidth="63.0" layoutX="612.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/Python.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="707.0" layoutY="128.0" mnemonicParsing="false" opacity="0.0" prefHeight="26.0" prefWidth="26.0" text="Button" />
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="707.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/magnifier%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="course1" contentDisplay="TOP" layoutX="99.0" layoutY="398.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="78.0" prefWidth="335.0" style="-fx-background-color: #94aace;" text="Analys course" textFill="#434040" textOverrun="CLIP" wrapText="true">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="course11" contentDisplay="TOP" layoutX="589.0" layoutY="390.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="78.0" prefWidth="335.0" style="-fx-background-color: #94aace;" text="Java course" textFill="#434040" textOverrun="CLIP" wrapText="true">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="63.0" layoutX="122.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/integral.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="63.0" layoutX="612.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/Managenie-master%20(1)/Managenie-master/src/main/resources/sample/Icons/java.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

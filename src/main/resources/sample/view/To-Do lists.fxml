@@ -203,12 +203,14 @@
             <Button layoutX="490.0" layoutY="105.0" mnemonicParsing="false" style="-fx-background-image: Image iew; -fx-background-color: transparent;" />
             <Button layoutX="447.0" layoutY="105.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
             <TextField layoutX="292.0" layoutY="126.0" prefHeight="36.0" prefWidth="360.0" promptText="Search in To-Do lists" style="-fx-background-radius: 15;" />
-            <Button layoutX="378.0" layoutY="104.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
-            <ImageView fitHeight="61.0" fitWidth="24.0" layoutX="622.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/magnifier.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="612.0" layoutY="128.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/magnifier.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <ImageView accessibleRole="BUTTON" fitHeight="24.0" fitWidth="24.0" layoutX="663.0" layoutY="132.0">
                <image>
                   <Image url="@../Icons/rubbish-bin.png" />
