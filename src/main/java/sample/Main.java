@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -22,6 +23,8 @@ public class Main extends Application {
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
+        Image image = new Image(getClass().getResource("Icons/Logo.png").openStream());
+        primaryStage.getIcons().add(image);
         primaryStage.setTitle("ManaGenie!");
         primaryStage.show();
     }
