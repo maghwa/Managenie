@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,20 +13,21 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
    <children>
       <Button fx:id="profile" layoutX="933.0" layoutY="27.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: #94aace;" visible="false" />
-      <Circle fill="#000a2c" layoutX="441.0" layoutY="62.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-      <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="420.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+      <Circle fill="#0e1d56" layoutX="223.0" layoutY="61.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="202.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/graduated.png" />
          </image>
       </ImageView>
-      <Label layoutX="509.0" layoutY="44.0" prefHeight="42.0" prefWidth="142.0" text="Student's name" textFill="#000a2c">
+      <Label layoutX="296.0" layoutY="40.0" prefHeight="42.0" prefWidth="142.0" text="Student's name" textFill="#000a2c">
          <font>
             <Font size="18.0" />
-         </font></Label>
-      <TableView layoutX="277.0" layoutY="341.0" prefHeight="224.0" prefWidth="486.0" style="-fx-background-radius: 15; -fx-background-color: #b1d6f7; -fx-border-radius: 15;">
+         </font>
+      </Label>
+      <TableView layoutX="70.0" layoutY="339.0" prefHeight="224.0" prefWidth="486.0" style="-fx-background-radius: 15; -fx-background-color: #b1d6f7; -fx-border-radius: 15;">
         <columns>
           <TableColumn fx:id="CourseColumn" prefWidth="101.59991455078125" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15 0 0 0; -fx-border-radius: 15 0 0 0;" text="Course" />
           <TableColumn fx:id="StartDayColumn" prefWidth="88.800048828125" style="-fx-background-color: b1d6f7;" text="Start day" />
@@ -37,7 +39,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <VBox alignment="CENTER" layoutX="512.0" layoutY="174.0" prefHeight="139.0" prefWidth="246.0" style="-fx-background-color: #000a2c; -fx-background-radius: 0 10 10 0;">
+      <VBox alignment="CENTER" layoutX="316.0" layoutY="173.0" prefHeight="139.0" prefWidth="246.0" style="-fx-background-color: #0e1d56; -fx-background-radius: 0 10 10 0;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -47,21 +49,15 @@
             <Label fx:id="Phone" layoutX="48.0" layoutY="81.0" text="Phone" textFill="#b1d6f7" />
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="278.0" layoutY="174.0" prefHeight="139.0" prefWidth="246.0" spacing="5.0" style="-fx-background-color: #000a2c; -fx-background-radius: 10 0 0 10;">
+      <VBox alignment="CENTER" layoutX="70.0" layoutY="173.0" prefHeight="139.0" prefWidth="246.0" spacing="5.0" style="-fx-background-color: #0e1d56; -fx-background-radius: 10 0 0 10;">
          <children>
             <Label fx:id="FirstName" text="First name   :  " textFill="#b1d6f7" />
             <Label fx:id="LastName" layoutX="10.0" layoutY="10.0" text="Last name   :  " textFill="#b1d6f7" />
             <Label fx:id="Matricule" layoutX="10.0" layoutY="45.0" text="Matricule : " textFill="#b1d6f7" />
          </children>
       </VBox>
-      <Button fx:id="Edit" layoutX="927.0" layoutY="5.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;">
-         <graphic>
-            <ImageView fx:id="EditIcon" fitHeight="30.0" fitWidth="30.0">
-               <image>
-                  <Image url="@../Icons/edit%20(1).png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button fx:id="Edit" layoutX="927.0" layoutY="5.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Accordion layoutY="36.0" />
+      <Accordion layoutY="27.0" />
    </children>
 </AnchorPane>

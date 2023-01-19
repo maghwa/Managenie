@@ -24,7 +24,7 @@ public class BasicController {
 
         if (i % 2 != 0) {
             TranslateTransition slideout = new TranslateTransition();
-            slideout.setDuration(Duration.seconds(4));
+            slideout.setDuration(Duration.seconds(0.4));
             slideout.setNode(MenuSlider);
             System.out.println("1");
             slideout.setToX(-60);
@@ -32,7 +32,7 @@ public class BasicController {
 
         } else if (i % 2 == 0) {
             TranslateTransition slidein = new TranslateTransition();
-            slidein.setDuration(Duration.seconds(4));
+            slidein.setDuration(Duration.seconds(0.4));
             slidein.setNode(MenuSlider);
             System.out.println("2");
             slidein.setToX(0);
