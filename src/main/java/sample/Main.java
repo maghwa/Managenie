@@ -22,6 +22,7 @@ public class Main extends Application {
         //fxmlLoader.setRoot(new AnchorPane());
         AnchorPane root = fxmlLoader.load();
         AnchorPane child = fxmlLoader1.load();
+        //for the menu
         child.setTranslateX(156);
         root.getChildren().add(child);
 
@@ -29,6 +30,7 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(root));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
+        //for adding the logo
         Image image = new Image(getClass().getResource("Icons/Logo.png").openStream());
         primaryStage.getIcons().add(image);
         primaryStage.setTitle("ManaGenie!");
