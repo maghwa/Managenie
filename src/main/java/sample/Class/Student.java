@@ -1,6 +1,4 @@
 package sample.Class;
-
-
 import java.util.ArrayList;
 import java.util.Date;
 
