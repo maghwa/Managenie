@@ -47,7 +47,7 @@ public class BasicController {
     //the methods that switches between interface side bar uses
     static void checkStudent() throws IOException {
         Main m2 = new Main();
-        m2.changeScene("view/StudentInterface.fxml");
+        m2.changeScene("view/StudentHome.fxml");
     }
     static void checkProfile() throws IOException {
         Main m2 = new Main();
@@ -67,7 +67,7 @@ public class BasicController {
     }
     static void checkAbsence() throws IOException {
         Main m1 = new Main();
-        m1.changeScene("view/Absence.fxml");
+        m1.changeScene("view/AbsencewithMenu.fxml");
     }
     static void checkSchedule() throws IOException {
         Main m1 = new Main();

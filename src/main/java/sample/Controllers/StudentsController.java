@@ -204,11 +204,11 @@ public class StudentsController implements Initializable {
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        tableView.setItems(model.getStudentList());
-        firstnameColumn.setCellValueFactory(new PropertyValueFactory<>("First Name"));
-        lastnameColumn.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
-        emailColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        matriculeColumn.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
+//            tableView.setItems(model.getStudentList());
+//            firstnameColumn.setCellValueFactory(new PropertyValueFactory<>("First Name"));
+//            lastnameColumn.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
+//            emailColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
+//            matriculeColumn.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
 
 
         // You can write it this way too =>
