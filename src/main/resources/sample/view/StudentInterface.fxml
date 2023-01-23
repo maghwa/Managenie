@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="625.0" fitWidth="981.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../../../../../../../../Managenie/src/main/resources/sample/img/Background_flou.png" />
+            <Image url="@..\img\Background_flou.png" />
          </image>
       </ImageView>
       <Button fx:id="profile1" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: #94aace;" visible="false" />

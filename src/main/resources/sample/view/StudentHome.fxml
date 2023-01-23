@@ -21,10 +21,9 @@
    <children>
       <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-3.0" layoutY="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../../../../../../../../Managenie/src/main/resources/sample/img/Background_flou.png" />
+            <Image url="@..\img\Background_flou.png" />
          </image>
       </ImageView>
-      <Button fx:id="profile" layoutX="933.0" layoutY="27.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: #94aace;" visible="false" />
       <Circle fill="#0e1d56" layoutX="397.0" layoutY="76.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="376.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -60,11 +59,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <ImageView fitHeight="61.0" fitWidth="24.0" layoutX="517.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../Managenie/src/main/resources/sample/Icons/magnifier.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="profile" layoutX="517.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #ffffff10;" />
       <MenuButton layoutX="569.0" layoutY="129.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #0e1d56; -fx-background-radius: 10;" text="Course" textFill="#b1d6f7">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
@@ -230,5 +225,27 @@
             </Button>
          </children>
       </AnchorPane>
+      <Button fx:id="Delete1" layoutX="936.0" layoutY="97.0" mnemonicParsing="false" onAction="#Menu" style="-fx-background-color: #ffffff10;">
+         <graphic>
+            <ImageView fx:id="MenuIconDelete" fitHeight="28.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../Icons/rubbish-bin.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="Add1" layoutX="936.0" layoutY="52.0" mnemonicParsing="false" style="-fx-background-color: #ffffff10;">
+         <graphic>
+            <ImageView fx:id="MenuIconAdd" fitHeight="28.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../Icons/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="61.0" fitWidth="24.0" layoutX="517.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/magnifier.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
