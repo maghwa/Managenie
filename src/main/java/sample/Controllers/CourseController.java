@@ -1,34 +1,35 @@
 package sample.Controllers;
 
-import javafx.animation.TranslateTransition;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
-
 import java.io.IOException;
-
 import static sample.Controllers.BasicController.*;
-import static sample.Controllers.BasicController.checkAbsence;
 
-public class AbsenceController {
-    int i = 0;
+public class CourseController {
+    int i=0;
     @FXML
     private Button Absence;
 
     @FXML
-    private TableColumn<?, ?> AbsentColl;
+    private ImageView AbsenceIcon;
 
     @FXML
     private Button Calender;
 
     @FXML
-    private ChoiceBox<?> CorurseBox;
+    private ImageView CalenderIcon;
+
+    @FXML
+    private ImageView CourseIcon;
+
+    @FXML
+    private ImageView CourseIcon1;
 
     @FXML
     private Button Courses;
@@ -43,41 +44,46 @@ public class AbsenceController {
     private Button Grades;
 
     @FXML
+    private ImageView GradesIcon;
+
+    @FXML
     private Button Help;
+
+    @FXML
+    private ImageView HelpIcon;
 
     @FXML
     private Button Home;
 
     @FXML
-    private TableColumn<?, ?> JustifCol;
+    private ImageView HomeIcon;
 
     @FXML
     private Button Logout;
 
     @FXML
-    private Button MenuB;
+    private ImageView LogoutIcon;
 
     @FXML
-    private ImageView MenuIconOpen;
+    private Button MenuBOpen;
+
+    @FXML
+    private ImageView MenuIcon;
 
     @FXML
     private Pane MenuSlider;
 
     @FXML
-    private TableColumn<?, ?> NameColl;
+    private Button Profile;
 
     @FXML
-    private Button Profile;
+    private ImageView ProfileIcon;
 
     @FXML
     private Button Todolist;
 
     @FXML
-    private Button Validate;
-
-    @FXML
-    private ChoiceBox<?> classBox;
-
+    private ImageView TodolistIcon;
 
     @FXML
     void Menu(ActionEvent event) {
@@ -162,15 +168,4 @@ public class AbsenceController {
         checkAbsence();
 
     }
-
-    }
-
-
-
-
-
-
-
-
-
-
+}

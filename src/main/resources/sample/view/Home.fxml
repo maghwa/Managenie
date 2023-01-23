@@ -18,7 +18,7 @@
             <Image url="@../Icons/Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="course" contentDisplay="TOP" layoutX="249.0" layoutY="207.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
+      <Button fx:id="course" contentDisplay="TOP" layoutX="249.0" layoutY="207.0" mnemonicParsing="false" onAction="#course" pickOnBounds="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="Course" textOverrun="CLIP" wrapText="true">
          <effect>
             <Blend />
          </effect>
@@ -42,7 +42,7 @@
             <Blend />
          </effect>
       </Button>
-      <Button fx:id="schedule" contentDisplay="TOP" layoutX="644.0" layoutY="206.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER">
+      <Button fx:id="schedule" contentDisplay="TOP" layoutX="644.0" layoutY="206.0" mnemonicParsing="false" onAction="#schedule" prefHeight="114.0" prefWidth="175.0" style="-fx-background-color: #94aace;" text="   Schedule" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -75,7 +75,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="profile" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+      <Button fx:id="profile" layoutX="582.0" layoutY="4.0" mnemonicParsing="false" onAction="#GoProfile" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
          <graphic>
             <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -83,7 +83,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="help" layoutX="3.0" layoutY="579.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="37.0" style="-fx-background-color: #ffffff10;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.leftAnchor="3.0">
+      <Button fx:id="help" layoutX="3.0" layoutY="579.0" mnemonicParsing="false" onAction="#GoHelp" prefHeight="45.0" prefWidth="37.0" style="-fx-background-color: #ffffff10;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.leftAnchor="3.0">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -92,7 +92,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="Logout" layoutX="915.0" layoutY="562.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #ffffff10;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Button fx:id="Logout" layoutX="915.0" layoutY="562.0" mnemonicParsing="false" onAction="#Logout" prefHeight="8.0" prefWidth="57.0" style="-fx-background-color: #ffffff10;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <graphic>
             <ImageView fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>

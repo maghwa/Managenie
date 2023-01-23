@@ -67,7 +67,7 @@ public class BasicController {
     }
     static void checkAbsence() throws IOException {
         Main m1 = new Main();
-        m1.changeScene("view/BasicBackground.fxml");
+        m1.changeScene("view/Absence.fxml");
     }
     static void checkSchedule() throws IOException {
         Main m1 = new Main();
@@ -84,7 +84,7 @@ public class BasicController {
 
     public static void checkLogout() throws IOException {
         Main m1 = new Main();
-        m1.changeScene("view/Logout.fxml");
+        m1.changeScene("view/SignUp.fxml");
    }
 
 

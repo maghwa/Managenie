@@ -1,4 +1,4 @@
-package sample.Class;
+package sample.Models;
 
 
 

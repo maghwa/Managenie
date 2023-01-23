@@ -4,9 +4,6 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -16,46 +13,56 @@ import java.io.IOException;
 import static sample.Controllers.BasicController.*;
 import static sample.Controllers.BasicController.checkAbsence;
 
-public class AbsenceController {
-    int i = 0;
+public class ScheduleController {
+    int i=0;
+
     @FXML
     private Button Absence;
 
     @FXML
-    private TableColumn<?, ?> AbsentColl;
+    private ImageView AbsenceIcon;
 
     @FXML
     private Button Calender;
 
     @FXML
-    private ChoiceBox<?> CorurseBox;
+    private ImageView CalenderIcon;
+
+    @FXML
+    private ImageView CourseIcon;
 
     @FXML
     private Button Courses;
 
     @FXML
-    private Button Edit;
-
-    @FXML
-    private ImageView EditIcon;
-
-    @FXML
     private Button Grades;
+
+    @FXML
+    private ImageView GradesIcon;
 
     @FXML
     private Button Help;
 
     @FXML
+    private ImageView HelpIcon;
+
+    @FXML
     private Button Home;
 
     @FXML
-    private TableColumn<?, ?> JustifCol;
+    private ImageView HomeIcon;
 
     @FXML
     private Button Logout;
 
     @FXML
-    private Button MenuB;
+    private Button Logout1;
+
+    @FXML
+    private ImageView LogoutIcon;
+
+    @FXML
+    private Button MenuBOpen;
 
     @FXML
     private ImageView MenuIconOpen;
@@ -64,19 +71,21 @@ public class AbsenceController {
     private Pane MenuSlider;
 
     @FXML
-    private TableColumn<?, ?> NameColl;
+    private Button Profile;
 
     @FXML
-    private Button Profile;
+    private ImageView ProfileIcon;
 
     @FXML
     private Button Todolist;
 
     @FXML
-    private Button Validate;
+    private ImageView TodolistIcon;
 
     @FXML
-    private ChoiceBox<?> classBox;
+    private ImageView studentIcon;
+
+
 
 
     @FXML
@@ -163,14 +172,4 @@ public class AbsenceController {
 
     }
 
-    }
-
-
-
-
-
-
-
-
-
-
+}

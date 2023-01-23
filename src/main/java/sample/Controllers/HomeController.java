@@ -7,6 +7,8 @@ import sample.Main;
 
 import java.io.IOException;
 
+import static sample.Controllers.BasicController.*;
+
 public class HomeController {
 
     @FXML
@@ -31,29 +33,42 @@ public class HomeController {
 
     //the methods that each button of the  Menubar uses
     public void absence(ActionEvent event) throws IOException {
-        BasicController.checkAbsence();
+        checkAbsence();
+    }
+    public void Logout(ActionEvent event) throws IOException {
+        checkLogout();
+    }
+    public void schedule(ActionEvent event) throws IOException {
+        checkSchedule();
     }
 
 
 
     public void grades(ActionEvent event) throws IOException {
-        BasicController.checkGrades();
+       checkGrades();
     }
 
 
 
     public void todoList(ActionEvent event) throws IOException {
-        BasicController.checkTodoList();
+        checkTodoList();
     }
 
 
 
     public void student(ActionEvent event) throws IOException {
-        BasicController.checkStudent();
+        checkStudent();
     }
     public void course(ActionEvent event) throws IOException{
-        BasicController.checkCourse();
+        checkCourse();
     }
+    public void GoHelp(ActionEvent event) throws IOException{
+        checkHelp();
+    }
+    public void GoProfile(ActionEvent event) throws IOException{
+        checkProfile();
+    }
+
 
 
     public HomeController() {

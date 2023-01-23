@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Main extends Application {
     //we need this variable to change the scenes
@@ -17,23 +19,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         stg = primaryStage;
         primaryStage.setResizable(true);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/BasicBackground.fxml"));
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("view/StudentInterface.fxml"));
-        //fxmlLoader.setRoot(new AnchorPane());
-        AnchorPane root = fxmlLoader.load();
-        AnchorPane child = fxmlLoader1.load();
-        //for the menu
-        child.setTranslateX(156);
-        root.getChildren().add(child);
-
-
-
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/Login.fxml"));
+        fxmlLoader.setRoot(new AnchorPane());
+        Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
-        //for adding the logo
-        Image image = new Image(getClass().getResource("Icons/Logo.png").openStream());
+        Image image = new Image(Objects.requireNonNull(getClass().getResource("Icons/Logo.png")).openStream());
         primaryStage.getIcons().add(image);
-        primaryStage.setTitle("ManaGenie!");
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setTitle("ManaGenie!!");
         primaryStage.show();
     }
     public void changeScene(String fxml) throws IOException {

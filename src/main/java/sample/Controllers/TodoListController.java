@@ -10,8 +10,11 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
+import static sample.Controllers.BasicController.*;
+import static sample.Controllers.BasicController.checkAbsence;
+
 public class TodoListController {
-    int i=0;
+    int i = 0;
 
     @FXML
     private Button Absence;
@@ -80,83 +83,91 @@ public class TodoListController {
 
     @FXML
     private ImageView TodolistIcon;
+
     @FXML
     void Menu(ActionEvent event) {
 
+
         i++;
 
-        TranslateTransition slide = new TranslateTransition();
+
         if (i % 2 != 0) {
-            MenuSlider.setTranslateX(-60);
-            slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(MenuSlider);
+            TranslateTransition slideout = new TranslateTransition();
+            slideout.setDuration(Duration.seconds(0.4));
+            slideout.setNode(MenuSlider);
+            System.out.println("1");
+            slideout.setToX(-60);
+            slideout.play();
 
-            slide.play();
+        } else if (i % 2 == 0) {
+            TranslateTransition slidein = new TranslateTransition();
+            slidein.setDuration(Duration.seconds(0.4));
+            slidein.setNode(MenuSlider);
+            System.out.println("2");
+            slidein.setToX(0);
 
-
-        }
-        else if (i % 2 == 0) {
-            slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(MenuSlider);
-
-            slide.setToX(0);
-            slide.play();
-            MenuSlider.setTranslateX(60);
-
-
-        }
-    }
-/*
-    @FXML
-    void GoAbsence(ActionEvent event)throws IOException {
-        HomeController.checkAbsence();
-
-    }
-
-    @FXML
-    void GoCourse(ActionEvent event) {
-
-    }
-
-    @FXML
-    void GoGrade(ActionEvent event) throws IOException {
-        HomeController.checkGrades();
-
-    }
-
-
-    @FXML
-    void GoTodoList(ActionEvent event)throws IOException {
-        HomeController.checkTodoList();
-
-    }
-
-    @FXML
-    void Logout(ActionEvent event) throws IOException{
-        HomeController.checkLogout();
-    }
-
-
-     @FXML
-        void GoHelp(ActionEvent event) throws IOException {
-            HomeController.checkHelp();
+            slidein.play();
 
         }
 
-        @FXML
-        void GoProfile(ActionEvent event) throws IOException {
-            HomeController.checkProfile();
-
-        }
-  @FXML
-    void goHome(ActionEvent event) throws IOException {
-        HomeController.checkHome();
 
     }
 
     @FXML
-    void goSchedule(ActionEvent event) throws IOException {
-        HomeController.checkSchedule();
-    }*/
+    void GoGrades(ActionEvent event) throws IOException {
+        checkGrades();
 
+    }
+
+    @FXML
+    void GoTodoList(ActionEvent event) throws IOException {
+        checkTodoList();
+
+    }
+
+    @FXML
+    void GoSchedule(ActionEvent event) throws IOException {
+        checkSchedule();
+    }
+
+    @FXML
+    void Logout(ActionEvent event) throws IOException {
+        checkLogout();
+    }
+
+
+    @FXML
+    void GoCourse(ActionEvent event) throws IOException {
+        checkCourse();
+    }
+
+
+    @FXML
+    void GoHelp(ActionEvent event) throws IOException {
+        checkHelp();
+
+    }
+
+    @FXML
+    void GoProfile(ActionEvent event) throws IOException {
+        checkProfile();
+    }
+
+    @FXML
+    void GoAbsence(ActionEvent event) throws IOException {
+        checkAbsence();
+
+    }
+
+    @FXML
+    void GoHome(ActionEvent event) throws IOException {
+        checkHome();
+
+    }
+
+    @FXML
+    void GoStudent(ActionEvent event) throws IOException {
+        checkAbsence();
+
+    }
 }
