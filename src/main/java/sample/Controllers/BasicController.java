@@ -82,6 +82,11 @@ public class BasicController {
         m.changeScene("view/Home.fxml");
     }
 
+    public static void checkAddStudent() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/AddStudent.fxml");
+    }
+
     public static void checkLogout() throws IOException {
         Main m1 = new Main();
         m1.changeScene("view/SignUp.fxml");
@@ -143,4 +148,5 @@ public class BasicController {
         checkAbsence();
 
     }
+
     }
