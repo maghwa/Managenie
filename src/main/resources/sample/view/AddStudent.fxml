@@ -36,11 +36,6 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="263.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Managenie-master/src/main/resources/com/example/project1/img/Icons/Icons/folder.png" />
-               </image>
-            </ImageView>
             <TextField layoutX="166.0" layoutY="121.0" style="-fx-background-color: #b1d6f7;" />
             <TextField layoutX="166.0" layoutY="79.0" style="-fx-background-color: #b1d6f7;" />
             <Label layoutX="54.0" layoutY="170.0" text="Email" textFill="#b1d6f7">
@@ -60,6 +55,7 @@
                   <Font name="Dubai Bold" size="16.0" />
                </font>
             </Button>
+            <Button layoutX="315.0" layoutY="9.0" mnemonicParsing="false" style="-fx-background-color: #b1d6f7;" text="Go back" />
          </children>
       </AnchorPane>
    </root>
