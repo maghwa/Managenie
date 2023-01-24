@@ -1,6 +1,7 @@
 package sample.Controllers;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import sample.Main;
 import sample.Models.Student;
 import sample.Models.StudentModel;
 
@@ -220,16 +222,7 @@ public class StudentsController implements Initializable {
     }
     @FXML
     void AddS(ActionEvent event) throws IOException {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/AddStudent.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Add Student");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        }catch(Exception e){
-            System.out.println("can't load new window :(");
-        }
+        checkAddStudent();
     }
 
     @FXML
