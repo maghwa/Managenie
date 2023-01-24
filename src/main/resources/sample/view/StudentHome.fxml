@@ -50,7 +50,7 @@
       <Accordion layoutY="36.0" />
       <Accordion layoutY="27.0" />
       <TextField layoutX="237.0" layoutY="129.0" prefHeight="35.0" prefWidth="319.0" promptText="Search" style="-fx-background-radius: 15;" />
-      <Button fx:id="Edit1" layoutX="935.0" layoutY="1.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;">
+      <Button fx:id="Edit1" layoutX="935.0" layoutY="1.0" mnemonicParsing="false" onAction="#EditS" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;">
          <graphic>
             <ImageView fx:id="EditIcon" fitHeight="30.0" fitWidth="30.0">
                <image>
@@ -225,7 +225,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="Delete1" layoutX="936.0" layoutY="97.0" mnemonicParsing="false" onAction="#Menu" style="-fx-background-color: #ffffff10;">
+      <Button fx:id="Delete1" layoutX="936.0" layoutY="97.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: #ffffff10;">
          <graphic>
             <ImageView fx:id="MenuIconDelete" fitHeight="28.0" fitWidth="27.0">
                <image>
@@ -233,7 +233,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="Add1" layoutX="936.0" layoutY="52.0" mnemonicParsing="false" style="-fx-background-color: #ffffff10;">
+      <Button fx:id="Add" layoutX="936.0" layoutY="52.0" mnemonicParsing="false" onAction="#AddS" style="-fx-background-color: #ffffff10;">
          <graphic>
             <ImageView fx:id="MenuIconAdd" fitHeight="28.0" fitWidth="27.0">
                <image>
@@ -247,5 +247,14 @@
             <Image url="@../Icons/magnifier.png" />
          </image>
       </ImageView>
+      <Button fx:id="Load" layoutX="936.0" layoutY="141.0" mnemonicParsing="false" onAction="#LoadData" style="-fx-background-color: #ffffff10;">
+         <graphic>
+            <ImageView fx:id="MenuIconDelete1" fitHeight="28.0" fitWidth="27.0">
+               <image>
+                  <Image url="@../Icons/refresh.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

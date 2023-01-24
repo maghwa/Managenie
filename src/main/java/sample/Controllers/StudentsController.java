@@ -2,13 +2,19 @@ package sample.Controllers;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.Models.Student;
 import sample.Models.StudentModel;
@@ -21,6 +27,12 @@ import static sample.Controllers.BasicController.*;
 
 public class StudentsController implements Initializable {
     int i=0;
+    private Stage stage;
+    private Scene scene ;
+    private Parent root ;
+
+    String query = null;
+
     @FXML
     private Button Absence;
 
@@ -34,16 +46,16 @@ public class StudentsController implements Initializable {
     private ImageView CalenderIcon;
 
     @FXML
-    private TableColumn<?, ?> firstnameColumn;
+    private TableColumn<Student,String> firstnameColumn;
 
     @FXML
-    private TableColumn<?, ?> lastnameColumn;
+    private TableColumn<Student,String> lastnameColumn;
 
     @FXML
-    private TableColumn<?, ?> emailColumn;
+    private TableColumn<Student,String> emailColumn;
 
     @FXML
-    private TableColumn<?, ?> matriculeColumn;
+    private TableColumn<Student,String> matriculeColumn;
 
     @FXML
     private ImageView CourseIcon;
@@ -174,6 +186,10 @@ public class StudentsController implements Initializable {
     void GoCourse(ActionEvent event) throws IOException {
         checkCourse();
     }
+    @FXML
+    void LoadData(ActionEvent event) {
+        tableView.setItems(model.getStudentList());
+    }
 
 
     @FXML
@@ -202,6 +218,31 @@ public class StudentsController implements Initializable {
         checkAbsence();
 
     }
+    @FXML
+    void AddS(ActionEvent event) throws IOException {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/AddStudent.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Add Student");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }catch(Exception e){
+            System.out.println("can't load new window :(");
+        }
+    }
+
+    @FXML
+    void EditS(ActionEvent event) {
+        //Student selected = tableView.getSelectionModel().getSelectedItem();
+       // model.updateStudent(selected, nameTextField.getText());
+    }
+
+    @FXML
+    void Delete(ActionEvent event) {
+//       Student selected = tableView.getSelectionModel().getSelectedItem();
+//        model.deleteStudent(selected);
+    }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 //            tableView.setItems(model.getStudentList());
@@ -215,10 +256,7 @@ public class StudentsController implements Initializable {
         // nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 
     }
-//    @FXML
-//    void loadDataButton(ActionEvent event) {
-//        tableView.setItems(model.getStudentList());
-//    }
+
 //
 //    @FXML
 //    void addButton(ActionEvent event) {
@@ -232,11 +270,7 @@ public class StudentsController implements Initializable {
 //        model.deleteStudent(selected);
 //    }
 //
-//    @FXML
-//    void updateButton(ActionEvent event) {
-//        Student selected = tableView.getSelectionModel().getSelectedItem();
-//        model.updateStudent(selected, nameTextField.getText());
-//    }
+
 }
 
 

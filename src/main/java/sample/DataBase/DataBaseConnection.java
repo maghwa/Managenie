@@ -13,8 +13,9 @@ public class DataBaseConnection {
     private static Connection conn = null;
     //Connection Info
     private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/students";
+
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "marwa";
+    private static final String PASSWORD = "000000";
 
     //Connect to DB
     public static void dbConnect() {
