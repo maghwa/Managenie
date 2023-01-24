@@ -1,5 +1,10 @@
 package sample.Controllers;
+
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,18 +15,28 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import sample.Main;
+import sample.DataBase.DataBaseConnection;
 import sample.Models.Student;
 import sample.Models.StudentModel;
+import javafx.application.Application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static sample.Controllers.BasicController.*;
 
@@ -30,6 +45,8 @@ public class StudentsController implements Initializable {
     private Stage stage;
     private Scene scene ;
     private Parent root ;
+
+    private StudentModel model = new StudentModel();
 
     String query = null;
 
@@ -46,16 +63,16 @@ public class StudentsController implements Initializable {
     private ImageView CalenderIcon;
 
     @FXML
-    private TableColumn<Student,String> firstnameColumn;
+    private TableColumn<Student,String> FirstNameColumn;
 
     @FXML
-    private TableColumn<Student,String> lastnameColumn;
+    private TableColumn<Student,String> LastNameColumn;
 
     @FXML
-    private TableColumn<Student,String> emailColumn;
+    private TableColumn<Student,String> EmailColumn;
 
     @FXML
-    private TableColumn<Student,String> matriculeColumn;
+    private TableColumn<Student,String> MatriculeColumn;
 
     @FXML
     private ImageView CourseIcon;
@@ -99,7 +116,8 @@ public class StudentsController implements Initializable {
     @FXML
     private ImageView LogoutIcon;
 
-
+    @FXML
+    private TextField SearchField;
     @FXML
     private Button MenuBOpen;
 
@@ -126,9 +144,12 @@ public class StudentsController implements Initializable {
 
     @FXML
     private ImageView studentIcon;
+
     @FXML
-    private TableView<Student> tableView;
-    private StudentModel model = new StudentModel();
+    private TableView<Student> StudentTableView;
+
+    private Student student = new Student();
+    ObservableList<Student> StudentObservableList = FXCollections.observableArrayList();
 
 
     @FXML
@@ -188,7 +209,7 @@ public class StudentsController implements Initializable {
     }
     @FXML
     void LoadData(ActionEvent event) {
-        tableView.setItems(model.getStudentList());
+       // tableView.setItems(model.getStudentList());
     }
 
 
@@ -215,21 +236,12 @@ public class StudentsController implements Initializable {
     }
     @FXML
     void GoStudent(ActionEvent event)throws IOException {
-        checkAbsence();
+        checkStudent();
 
     }
     @FXML
     void AddS(ActionEvent event) throws IOException {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/AddStudent.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Add Student");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        }catch(Exception e){
-            System.out.println("can't load new window :(");
-        }
+        checkAddStudent();
     }
 
     @FXML
@@ -245,16 +257,80 @@ public class StudentsController implements Initializable {
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-//            tableView.setItems(model.getStudentList());
-//            firstnameColumn.setCellValueFactory(new PropertyValueFactory<>("First Name"));
-//            lastnameColumn.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
-//            emailColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
-//            matriculeColumn.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String StudentViewQuery = "SELECT first_name,last_name,email,matricule FROM students;";
+
+        try {
+
+            Statement statement = connectDB.createStatement();
+            ResultSet queryOutput = statement.executeQuery(StudentViewQuery);
+
+            while (queryOutput.next()){
 
 
-        // You can write it this way too =>
-        // nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+                String queryFirstName = queryOutput.getString("first_name");
+                String queryLastName = queryOutput.getString("last_name");
+               String queryEmail = queryOutput.getString("email");
+               String queryMatricule = queryOutput.getString("matricule");
+                System.out.println(queryFirstName);
 
+                //Populate the Observable list of products
+                StudentObservableList.add(new Student( queryFirstName,queryLastName, queryEmail, queryMatricule));
+
+            }
+
+            // Correspending each Column in interface with column in database
+
+                      FirstNameColumn.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
+                      LastNameColumn.setCellValueFactory(new PropertyValueFactory<>("LastName"));
+                      EmailColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
+                      MatriculeColumn.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
+
+
+            // insert Values oF StudentObservableList in the StudentTableView
+            StudentTableView.setItems(StudentObservableList);
+
+             //initial filtered list
+            FilteredList<Student> filteredData = new FilteredList<>(StudentObservableList, b -> true);
+
+            SearchField.textProperty().addListener((observable ,oldValue, newValue)-> {
+                filteredData.setPredicate(productSearchModel -> {
+
+                    if (newValue.isEmpty() || newValue.isBlank() || newValue == null){
+                        return true;
+                    }
+
+                    String searchKeyword = newValue.toLowerCase();
+
+                    if (student.getFirstName().toLowerCase().indexOf(searchKeyword) > -1){
+                        return true;
+                    } else if (student.getLastName().toLowerCase().indexOf(searchKeyword) > -1) {
+                        return true;
+                    } else if (student.getEmail().toLowerCase().indexOf(searchKeyword) > -1){
+                        return true;
+                    } else if (student.getMatricule().toLowerCase().indexOf(searchKeyword) > -1){
+                        return true;
+                    }else {
+                        return false;
+                    }
+                });
+            });
+
+            SortedList<Student> sortedData = new SortedList<>(filteredData);
+
+            sortedData.comparatorProperty().bind(StudentTableView.comparatorProperty());
+
+            StudentTableView.setItems(sortedData);
+
+
+        }catch (SQLException e){
+            Logger.getLogger(StudentsController.class.getName()).log(Level.SEVERE , null , e);
+            e.printStackTrace();
+        }
+
+    }
     }
 
 //
@@ -271,7 +347,7 @@ public class StudentsController implements Initializable {
 //    }
 //
 
-}
+
 
 
 

@@ -49,6 +49,10 @@ public class BasicController {
         Main m2 = new Main();
         m2.changeScene("view/StudentHome.fxml");
     }
+    public static void checkAddStudent() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/AddStudent.fxml");
+    }
     static void checkProfile() throws IOException {
         Main m2 = new Main();
         m2.changeScene("view/Profile.fxml");

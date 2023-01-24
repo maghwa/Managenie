@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Scene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,56 +10,49 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Scene xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <root>
-      <AnchorPane prefHeight="329.0" prefWidth="390.0" style="-fx-background-color: #1d326e;">
-         <children>
-            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/add%20(1).png" />
-               </image>
-            </ImageView>
-            <Text fill="#b1d6f7" layoutX="43.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a student">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Text>
-            <Line endX="274.0" endY="-7.62939453125E-6" layoutX="115.0" layoutY="46.0" startX="-116.0000228881836" startY="-7.62939453125E-6" stroke="#b1d6f7" />
-            <Label layoutX="52.0" layoutY="82.0" text="First Name  :" textFill="#b1d6f7">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="53.0" layoutY="124.0" text="Last Name" textFill="#b1d6f7">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="263.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Managenie-master/src/main/resources/com/example/project1/img/Icons/Icons/folder.png" />
-               </image>
-            </ImageView>
-            <TextField layoutX="166.0" layoutY="121.0" style="-fx-background-color: #b1d6f7;" />
-            <TextField layoutX="166.0" layoutY="79.0" style="-fx-background-color: #b1d6f7;" />
-            <Label layoutX="54.0" layoutY="170.0" text="Email" textFill="#b1d6f7">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="165.0" layoutY="167.0" style="-fx-background-color: #b1d6f7;" />
-            <Label layoutX="53.0" layoutY="211.0" text="Matricule" textFill="#b1d6f7">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="165.0" layoutY="208.0" style="-fx-background-color: #b1d6f7;" />
-            <Button layoutX="154.0" layoutY="274.0" mnemonicParsing="false" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Validate" textFill="#0e1d56" AnchorPane.bottomAnchor="14.200000000000003" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="157.6">
-               <font>
-                  <Font name="Dubai Bold" size="16.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </root>
-</Scene>
+<AnchorPane prefHeight="329.0" prefWidth="390.0" style="-fx-background-color: #1d326e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.AddStudentController">
+   <children>
+      <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/add%20(1).png" />
+         </image>
+      </ImageView>
+      <Text fill="#b1d6f7" layoutX="43.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a student">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Text>
+      <Line endX="274.0" endY="-7.62939453125E-6" layoutX="115.0" layoutY="46.0" startX="-116.0000228881836" startY="-7.62939453125E-6" stroke="#b1d6f7" />
+      <Label layoutX="52.0" layoutY="82.0" text="First Name  :" textFill="#b1d6f7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="124.0" text="Last Name" textFill="#b1d6f7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="LastNameField" layoutX="166.0" layoutY="121.0" style="-fx-background-color: #b1d6f7;" />
+      <TextField fx:id="FirstNameField" layoutX="166.0" layoutY="79.0" style="-fx-background-color: #b1d6f7;" />
+      <Label layoutX="54.0" layoutY="170.0" text="Email" textFill="#b1d6f7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EmailField" layoutX="165.0" layoutY="167.0" style="-fx-background-color: #b1d6f7;" />
+      <Label layoutX="53.0" layoutY="211.0" text="Matricule" textFill="#b1d6f7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="MatriculeField" layoutX="165.0" layoutY="208.0" style="-fx-background-color: #b1d6f7;" />
+      <Button fx:id="ValidAddB" layoutX="154.0" layoutY="274.0" mnemonicParsing="false" onAction="#ValidAdd" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Validate" textFill="#0e1d56" AnchorPane.bottomAnchor="14.200000000000003" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="157.6">
+         <font>
+            <Font name="Dubai Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="GoStudent" layoutX="315.0" layoutY="9.0" mnemonicParsing="false" onAction="#GoStudent" style="-fx-background-color: #b1d6f7;" text="Go back" />
+      <Label fx:id="AjouMessage" layoutX="179.0" layoutY="246.0" text="Label" />
+   </children>
+</AnchorPane>

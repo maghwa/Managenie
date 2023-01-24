@@ -1,3 +1,4 @@
+
 package sample.Models;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -6,8 +7,9 @@ public class StudentModel {
     ObservableList<Student> studentList;
 
     public StudentModel() {
+
         studentList = FXCollections.observableArrayList();
-        studentList.add(new Student("Marwa","El Kamil","mima@gmail.com","AZAZkk"));
+
         studentList.add(new Student("Nilam","El Amrani","nino@gmail.com","jjajaj"));
 
     }
@@ -31,6 +33,7 @@ public class StudentModel {
 
     public void updateStudent(Student s, String name) {
         int index = studentList.indexOf(s);
-        studentList.get(index).setLastname(name);
+        studentList.get(index).setLastName(name);
     }
 }
+

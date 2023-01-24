@@ -4,7 +4,7 @@ module com.example.project1 {
     requires javafx.fxml;
     requires java.sql;
     requires java.sql.rowset;
-
+opens sample.Models to javafx.base;
 
     opens sample to javafx.fxml;
     exports sample;

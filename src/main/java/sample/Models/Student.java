@@ -1,15 +1,8 @@
 package sample.Models;
 
-import java.util.ArrayList;
-import java.util.Date;
-import javafx.beans.property.SimpleStringProperty;
 
-public class Student{
-    //attributes
-    private SimpleStringProperty firstname = new SimpleStringProperty();
-    private SimpleStringProperty lastname = new SimpleStringProperty();
-    private SimpleStringProperty email = new SimpleStringProperty();
-    private SimpleStringProperty matricule = new SimpleStringProperty();
+
+public class Student {
 
     //attributs
     private String Matricule;
@@ -18,50 +11,47 @@ public class Student{
     private String Email;
 
     //getters
-    public String getFirstName() {
-        return firstname.get();
-    }
-    public String getLastName() {
-        return lastname.get();
-    }
-    public String getEmail() {
-        return email.get();
-    }
-    public String getMatricule() {
-        return matricule.get();
-    }
-    //setters
-    public void setFirstname(String firstname) {
-        this.firstname.set(firstname);
-    }
-    public void setLastname(String lastname) {this.lastname.set(lastname);}
-    public void setEmail(String email) {this.email.set(email);}
-    public void setMatricule(String matricule) {this.matricule.set(matricule);}
 
 
-    //Constructors
     public Student() {
         super();
     }
-    public Student(String FirstName,String LastName,String Email,String Matricule) {
 
-        this.firstname.set(FirstName);
-        this.lastname.set(LastName);
-        this.email.set(Email);
-        this.matricule.set(Matricule);
-    }
-    public SimpleStringProperty firstnameProperty() {
-        return firstname;
-    }
-    public SimpleStringProperty lastnameProperty() {
-        return lastname;
-    }
-    public SimpleStringProperty emailProperty() {
-        return email;
-    }
-    public SimpleStringProperty matriculeProperty() {
-        return matricule;
+    public Student(String FirstName, String LastName, String Email, String Matricule) {
+this.FirstName=FirstName;
+
+        this.LastName=LastName;
+
+        this.Email=Email;
+        this.Matricule=Matricule;
     }
 
+    public String getEmail() {
+        return Email;
+    }
 
+    public String getMatricule() {
+        return Matricule;
+    }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+//setters
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+    public void setEmail(String email) {
+        Email = email;
+    }
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
+    public void setMatricule(String matricule) {
+        Matricule = matricule;
+    }
 }
