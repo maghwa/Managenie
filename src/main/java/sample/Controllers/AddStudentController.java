@@ -64,7 +64,7 @@ public class AddStudentController {
 
         StudentObservableList.add(new Student(FirstName,LastName,Email,Matricule));
 
-        String insertFields = "INSERT INTO `Magasin`.`students` (`first_name`, `last_name`, `email`, `matricule`) VALUES ('";
+        String insertFields = "INSERT INTO `Managenie_db`.`students` (`first_name`, `last_name`, `email`, `matricule`) VALUES ('";
         String insertValues = FirstName +"','"+ LastName +"','"+ Email +"','"+ Matricule +"')";
         String insertIntoRegister = insertFields + insertValues;
 
@@ -83,16 +83,17 @@ public class AddStudentController {
 //                stage.show();
 
                 AjouMessage.setText("Produit Ajouté Avec Succes !");
+                AjouMessage.setTextFill(Color.GREEN);
 
             }else {
                 AjouMessage.setText("Veuillez Remplir Tous Les Cases");
-                AjouMessage.setTextFill(Color.YELLOW);
+                AjouMessage.setTextFill(Color.RED);
             }
 
         }catch (Exception e){
 
             AjouMessage.setText("Erreur");
-            AjouMessage.setTextFill(Color.YELLOW);
+            AjouMessage.setTextFill(Color.RED);
             e.printStackTrace();
             e.getCause();
 

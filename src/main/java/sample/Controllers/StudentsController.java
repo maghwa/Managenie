@@ -12,14 +12,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.Main;
@@ -146,6 +144,9 @@ public class StudentsController implements Initializable {
     private ImageView studentIcon;
 
     @FXML
+    private Label ModifMessage;
+
+    @FXML
     private TableView<Student> StudentTableView;
 
     private Student student = new Student();
@@ -244,16 +245,16 @@ public class StudentsController implements Initializable {
         checkAddStudent();
     }
 
-    @FXML
-    void EditS(ActionEvent event) {
-        //Student selected = tableView.getSelectionModel().getSelectedItem();
-       // model.updateStudent(selected, nameTextField.getText());
-    }
+//    @FXML
+//    void EditS(ActionEvent event) {
+//        Student selected = StudentTableView.getSelectionModel().getSelectedItem();
+//        model.updateStudent(selected, nameTextField.getText());
+//    }
 
     @FXML
-    void Delete(ActionEvent event) {
-//       Student selected = tableView.getSelectionModel().getSelectedItem();
-//        model.deleteStudent(selected);
+    void DeleteS(ActionEvent event) {
+       Student selected = StudentTableView.getSelectionModel().getSelectedItem();
+        model.deleteStudent(selected);
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -274,7 +275,6 @@ public class StudentsController implements Initializable {
                 String queryLastName = queryOutput.getString("last_name");
                String queryEmail = queryOutput.getString("email");
                String queryMatricule = queryOutput.getString("matricule");
-                System.out.println(queryFirstName);
 
                 //Populate the Observable list of products
                 StudentObservableList.add(new Student( queryFirstName,queryLastName, queryEmail, queryMatricule));
@@ -296,7 +296,7 @@ public class StudentsController implements Initializable {
             FilteredList<Student> filteredData = new FilteredList<>(StudentObservableList, b -> true);
 
             SearchField.textProperty().addListener((observable ,oldValue, newValue)-> {
-                filteredData.setPredicate(productSearchModel -> {
+                filteredData.setPredicate(student -> {
 
                     if (newValue.isEmpty() || newValue.isBlank() || newValue == null){
                         return true;
@@ -331,6 +331,84 @@ public class StudentsController implements Initializable {
         }
 
     }
+
+
+    public void EditS(ActionEvent event){
+
+        DataBaseConnection connectnow = new DataBaseConnection();
+        Connection connectDB = connectnow.getConnection();
+
+
+        String FirstName = FirstNameColumn.getText();
+        String LastName = LastNameColumn.getText();
+        String Email = EmailColumn.getText();
+        String Matricule = MatriculeColumn.getText();
+
+        String ModifyFields =" UPDATE `Managenie_db`.`student` SET `first_name` = '"+FirstName+"', `last_name` = '"+LastName +"',  `email` = '"+Email+"' WHERE (`matricule` = '"+Matricule+"');";
+        String ModifyIntoRegister = ModifyFields ;
+
+        try {
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(ModifyIntoRegister);
+
+            Parent root = FXMLLoader.load(getClass().getResource("CaisGestProduits.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene =  new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            ModifMessage.setText("Produit Modifié Avec Succes !");
+            ModifMessage.setTextFill(Color.BLUE);
+            StudentTableView.refresh();
+
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+            e.getCause();
+
+            ModifMessage.setText("Veuillez Remplir Tous Les Cases");
+            ModifMessage.setTextFill(Color.YELLOW);
+
+        }
+
+    }
+//
+//    public void DeleteS (ActionEvent event){
+//        DataBaseConnection connectnow = new DataBaseConnection();
+//        Connection connectDB = connectnow.getConnection();
+//
+//        String CodeProduit = SupProdCodeProduitTextField.getText();
+//        String ModifyIntoRegister = "DELETE FROM `Magasin`.`Produit` WHERE (`Code_Produit` = '"+CodeProduit+"');" ;
+//
+//        if (SupProdCodeProduitTextField.getText().isBlank() == false || SupProdCodeProduitTextField.getText().isEmpty() == false ) {
+//            try {
+//                Statement statement = connectDB.createStatement();
+//                statement.executeUpdate(ModifyIntoRegister);
+//
+//                Parent root = FXMLLoader.load(getClass().getResource("CaisGestProduits.fxml"));
+//                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//                scene =  new Scene(root);
+//                stage.setScene(scene);
+//                stage.show();
+//
+//                SupProdMessage.setText("Produit Supprimé Avec Succes !");
+//                SupProdMessage.setTextFill(Color.BLUE);
+//
+//            }catch (Exception e){
+//
+//                e.printStackTrace();
+//                e.getCause();
+//
+//            }
+//        }else {
+//            SupProdMessage.setText("Entrez Le Code Du Produit !");
+//            SupProdMessage.setTextFill(Color.RED);
+//        }
+//
+//    }
+
+
     }
 
 //

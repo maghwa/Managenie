@@ -156,7 +156,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="Logout1" mnemonicParsing="false" onAction="#GoStudent" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                        <Button fx:id="StudentB" mnemonicParsing="false" onAction="#GoStudent" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -225,7 +225,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="Delete1" layoutX="936.0" layoutY="97.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: #ffffff10;">
+      <Button fx:id="Delete1" layoutX="936.0" layoutY="97.0" mnemonicParsing="false" onAction="#DeleteS" style="-fx-background-color: #ffffff10;">
          <graphic>
             <ImageView fx:id="MenuIconDelete" fitHeight="28.0" fitWidth="27.0">
                <image>
@@ -256,5 +256,6 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label fx:id="ModifMessage" layoutX="415.0" layoutY="177.0" prefHeight="18.0" prefWidth="24.0" />
    </children>
 </AnchorPane>
