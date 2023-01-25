@@ -73,6 +73,10 @@ public class BasicController {
         Main m1 = new Main();
         m1.changeScene("view/AbsencewithMenu.fxml");
     }
+    static void checkModifyS() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/EditStudent.fxml");
+    }
     static void checkSchedule() throws IOException {
         Main m1 = new Main();
         m1.changeScene("view/Schedule.fxml");

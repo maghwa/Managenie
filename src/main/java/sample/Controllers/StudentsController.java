@@ -333,45 +333,8 @@ public class StudentsController implements Initializable {
     }
 
 
-    public void EditS(ActionEvent event){
-
-        DataBaseConnection connectnow = new DataBaseConnection();
-        Connection connectDB = connectnow.getConnection();
-
-
-        String FirstName = FirstNameColumn.getText();
-        String LastName = LastNameColumn.getText();
-        String Email = EmailColumn.getText();
-        String Matricule = MatriculeColumn.getText();
-
-        String ModifyFields =" UPDATE `Managenie_db`.`student` SET `first_name` = '"+FirstName+"', `last_name` = '"+LastName +"',  `email` = '"+Email+"' WHERE (`matricule` = '"+Matricule+"');";
-        String ModifyIntoRegister = ModifyFields ;
-
-        try {
-            Statement statement = connectDB.createStatement();
-            statement.executeUpdate(ModifyIntoRegister);
-
-            Parent root = FXMLLoader.load(getClass().getResource("CaisGestProduits.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene =  new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-            ModifMessage.setText("Produit Modifié Avec Succes !");
-            ModifMessage.setTextFill(Color.BLUE);
-            StudentTableView.refresh();
-
-
-        }catch (Exception e){
-
-            e.printStackTrace();
-            e.getCause();
-
-            ModifMessage.setText("Veuillez Remplir Tous Les Cases");
-            ModifMessage.setTextFill(Color.YELLOW);
-
-        }
-
+    public void EditS(ActionEvent event) throws IOException {
+        checkModifyS();
     }
 //
 //    public void DeleteS (ActionEvent event){
