@@ -59,7 +59,7 @@ public class BasicController {
     }
     static void checkCourse() throws IOException {
         Main m2 = new Main();
-        m2.changeScene("view/CourseHome.fxml");
+        m2.changeScene("view/cours.fxml");
     }
     static void checkTodoList() throws IOException {
         Main m2 = new Main();
@@ -94,6 +94,17 @@ public class BasicController {
         Main m1 = new Main();
         m1.changeScene("view/SignUp.fxml");
    }
+    public static void checkCourseDisc() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/CourseDescrib.fxml");
+    }
+    public static void checkUploadFile() throws IOException {
+        //System.out.println(BasicController.class.getResource("view/upload.fxml"));
+        Main m1 = new Main();
+        //m1.popup("view/upload.fxml");
+        m1.changeScene("view/upload.fxml");
+
+    }
 
 
     //the methods that each button of the  side bar uses

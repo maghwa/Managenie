@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.CourseDiscController">
    <children>
-      <ImageView fitHeight="625.0" fitWidth="981.0">
+      <ImageView fx:id="main" fitHeight="625.0" fitWidth="981.0">
          <image>
             <Image url="@../img/Background_flou.png" />
          </image>
@@ -21,7 +27,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="Edit" layoutX="927.0" layoutY="5.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;">
+      <Button fx:id="Upload_btn" layoutX="927.0" layoutY="5.0" mnemonicParsing="false" onAction="#Upload" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;">
          <graphic>
             <ImageView fx:id="EditIcon" fitHeight="30.0" fitWidth="30.0">
                <image>

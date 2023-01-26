@@ -86,6 +86,9 @@ public class CourseController {
     private ImageView TodolistIcon;
 
     @FXML
+    private Button course_1;
+
+    @FXML
     void Menu(ActionEvent event) {
 
 
@@ -167,5 +170,8 @@ public class CourseController {
     void GoStudent(ActionEvent event)throws IOException {
         checkAbsence();
 
+    }
+    public void CourseDescrib(ActionEvent event) throws IOException{
+        checkCourseDisc();
     }
 }
