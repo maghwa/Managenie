@@ -1,11 +1,15 @@
 package sample.Controllers;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.*;
 import javafx.event.*;
+import javafx.util.Duration;
 import sample.Main;
 
 import java.io.IOException;
@@ -34,6 +38,12 @@ public class Login {
     @FXML
     private Label loginMessageLabel;
 
+    @FXML
+    private Label quote;
+
+    private String message = "Set your goals high, and don’t stop till you get there";
+    private int charIndex = 0;
+
 
     public void userLogin(ActionEvent event) throws IOException {
         checkLogin();
@@ -60,5 +70,23 @@ public class Login {
         } else {
             loginMessageLabel.setText("Wrong username or password!");
         }*/
+    }
+
+    public void initialize() {
+        //quote.setStyle("-fx-effect: dropshadow(gaussian, #f0c4f7, 5, 0.5, 0, 0);");
+        Timeline timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(0.1),
+                        new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                quote.setText(message.substring(0, charIndex++));
+                                if (charIndex > message.length()) {
+                                    charIndex = 0;
+                                }
+                            }
+                        }));
+        timeline.play();
     }
 }

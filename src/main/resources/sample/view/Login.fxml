@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Login">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Login">
    <children>
       <ImageView fitHeight="634.0" fitWidth="990.0" layoutX="-4.0" layoutY="-8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -55,7 +55,7 @@
       </AnchorPane>
       <AnchorPane layoutY="5.0" prefHeight="625.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="465.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label contentDisplay="CENTER" layoutX="27.0" layoutY="269.0" opacity="0.84" prefHeight="98.0" prefWidth="462.0" text="&quot;Live as if you were to die tomorrow.  " textFill="#000a2c" AnchorPane.bottomAnchor="258.20000000000005" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="269.0">
+            <Label fx:id="quote" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="269.0" opacity="0.84" prefHeight="98.0" prefWidth="462.0" textAlignment="CENTER" textFill="#000a2c" AnchorPane.bottomAnchor="258.20000000000005" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="269.0">
                <font>
                   <Font name="Elephant Italic" size="14.0" />
                </font>
@@ -67,11 +67,6 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
-            </Label>
-            <Label layoutX="194.0" layoutY="329.0" opacity="0.93" prefHeight="26.0" prefWidth="294.0" text="Learn as if you were to live forever.&quot;" textFill="#0e1d56">
-               <font>
-                  <Font name="Elephant Italic" size="14.0" />
-               </font>
             </Label>
             <ImageView fitHeight="71.0" fitWidth="89.0" layoutX="14.0" layoutY="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="7.0">
                <image>
