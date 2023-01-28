@@ -19,7 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         stg = primaryStage;
         primaryStage.setResizable(false);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/welcome.fxml"));
         fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));

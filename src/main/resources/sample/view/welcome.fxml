@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.WelcomController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.WelcomController" type="AnchorPane">
    <children>
       <ImageView fitHeight="661.0" fitWidth="1125.0" layoutX="-122.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-7.8125" AnchorPane.leftAnchor="-122.0" AnchorPane.rightAnchor="-22.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -29,4 +29,4 @@
          </font>
       </Button>
    </children>
-</AnchorPane>
+</fx:root>
