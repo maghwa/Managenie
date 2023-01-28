@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -18,7 +19,7 @@
             <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
-      <Button fx:id="Edit" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Button fx:id="Edit" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#EditC" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <graphic>
             <ImageView fx:id="EditIcon" fitHeight="30.0" fitWidth="30.0">
                <image>
@@ -27,9 +28,9 @@
             </ImageView>
          </graphic>
       </Button>
-      <AnchorPane layoutX="-11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0">
+      <AnchorPane layoutX="-11.0" layoutY="-10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0">
          <children>
-            <Button layoutX="294.0" layoutY="212.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="162.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 1">
+            <Button layoutX="240.0" layoutY="212.0" mnemonicParsing="false" onAction="#CourseDescrib" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="C++">
                <font>
                   <Font name="Segoe UI Semilight Italic" size="19.0" />
                </font>
@@ -39,56 +40,60 @@
                   <Font name="Dubai Bold" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="565.0" layoutY="375.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="162.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 6">
+            <Button layoutX="565.0" layoutY="375.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 2 ">
                <font>
                   <Font name="Segoe UI Semilight Italic" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="294.0" layoutY="375.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="162.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 5">
+            <Button layoutX="240.0" layoutY="375.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 1">
                <font>
                   <Font name="Segoe UI Semilight Italic" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="294.0" layoutY="292.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="162.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 3">
+            <Button layoutX="240.0" layoutY="292.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Java">
                <font>
                   <Font name="Segoe UI Semilight Italic" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="566.0" layoutY="292.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="162.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 4">
+            <Button layoutX="566.0" layoutY="292.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="R">
                <font>
                   <Font name="Segoe UI Semilight Italic" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="566.0" layoutY="212.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="162.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Course 2">
+            <Button layoutX="566.0" layoutY="212.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;" text="Python">
                <font>
                   <Font name="Segoe UI Semilight Italic" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="490.0" layoutY="105.0" mnemonicParsing="false" style="-fx-background-image: Image iew; -fx-background-color: transparent;" />
-            <TextField layoutX="292.0" layoutY="126.0" prefHeight="36.0" prefWidth="360.0" promptText="Search in Courses" style="-fx-background-radius: 15;" />
-            <Button layoutX="606.0" layoutY="128.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+            <TextField fx:id="SearchField" layoutX="292.0" layoutY="126.0" prefHeight="36.0" prefWidth="434.0" promptText="Search in Courses" style="-fx-background-radius: 15;" />
+            <Button layoutX="923.0" layoutY="111.0" mnemonicParsing="false" onAction="#DeletC" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fitHeight="61.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0">
                      <image>
-                        <Image url="@../Icons/magnifier.png" />
+                        <Image url="@../Icons/rubbish-bin.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <ImageView accessibleRole="BUTTON" fitHeight="24.0" fitWidth="24.0" layoutX="663.0" layoutY="132.0">
-               <image>
-                  <Image url="@../Icons/rubbish-bin.png" />
-               </image>
-            </ImageView>
-            <ImageView accessibleRole="INCREMENT_BUTTON" fitHeight="24.0" fitWidth="24.0" layoutX="695.0" layoutY="132.0">
-               <image>
-                  <Image url="@../Icons/add.png" />
-               </image>
-            </ImageView>
             <ImageView fx:id="CourseIcon1" fitHeight="56.0" fitWidth="63.0" layoutX="409.0" layoutY="31.0">
                <image>
                   <Image url="@../Icons/books.png" />
                </image>
             </ImageView>
+            <BorderPane layoutX="105.0" layoutY="-44.0" prefHeight="200.0" prefWidth="200.0" />
+            <ImageView fitHeight="61.0" fitWidth="24.0" layoutX="697.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/magnifier.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="923.0" layoutY="63.0" mnemonicParsing="false" onAction="#AddC" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView accessibleRole="INCREMENT_BUTTON" fitHeight="32.0" fitWidth="32.0" onDragDetected="#AddC">
+                     <image>
+                        <Image url="@../Icons/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="605.0" prefWidth="54.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">

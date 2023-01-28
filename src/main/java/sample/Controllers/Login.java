@@ -5,14 +5,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.*;
 import javafx.event.*;
 import javafx.util.Duration;
+import sample.DataBase.DataBaseConnection;
 import sample.Main;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class Login {
     public Login() {
     }
@@ -61,15 +69,38 @@ public class Login {
 
     private void checkLogin() throws IOException {
         Main m = new Main();
-        m.changeScene("view/Home.fxml");
-        /*if (username.getText().toString().equals("marwa") && password.getText().toString().equals("2022")) {
-            loginMessageLabel.setText("Sucess!!");
-            m.changeScene("view/Home.fxml");
-        } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
-            loginMessageLabel.setText("Please enter your data");
-        } else {
-            loginMessageLabel.setText("Wrong username or password!");
-        }*/
+        if ( username.getText().isBlank() == false && password.getText().isBlank() == false) {
+            DataBaseConnection connectNow = new DataBaseConnection();
+            Connection connectDB = connectNow.getConnection();
+
+            String verifyLogin = "SELECT count(1) FROM Managenie_db.profile WHERE Username = '" + username.getText() + "' AND Password = '" + password.getText() +"'";
+
+            String Username = username.getText();
+
+            try {
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult = statement.executeQuery(verifyLogin);
+
+                while(queryResult.next()){
+                    if (queryResult.getInt(1) == 1) {
+                        m.changeScene("view/Home.fxml");
+
+
+                    }else {
+                        loginMessageLabel.setText("Username Ou Password Incorrect !");
+
+                    }
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                e.getCause();
+            }
+        }
+        else {
+            loginMessageLabel.setText("Entrer Le Username et Le Password SVP");
+        }
+
+
     }
 
     public void initialize() {
@@ -88,5 +119,8 @@ public class Login {
                             }
                         }));
         timeline.play();
+
+
+
     }
 }

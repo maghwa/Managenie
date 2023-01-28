@@ -4,36 +4,58 @@ package sample.Models;
 
 import java.util.ArrayList;
 
-public class Document extends Course {
-    //attributes
+public class Document  {
+
         private int idDocuments;
-        private int ClassSize;
-        private ArrayList<Student> StudentList;
-    //methodes
+        private String DocName;
+        private String DocPath;
+        private String DocDesc;
+
+
+
+//methodes
+    //Constructor
+        public Document( String docName, String docPath, String docDesc) {
+
+            DocName = docName;
+            DocPath = docPath;
+            DocDesc = docDesc;
+        }
+
+            //attributes
+
+
+            public Document() {
+                super();
+            }
 
         //getters
-            public int getClassSize() {
-                return ClassSize;
-            }
+        public String getDocDesc() {
+            return DocDesc;
+        }
+        public String getDocPath() {
+            return DocPath;
+        }
+        public String getDocName() {
+            return DocName;
+        }
+        public int getIdDocuments() {
+            return idDocuments;
+        }
 
-            public ArrayList<Student> getStudentList() {
-                return StudentList;
-            }
 
-            public int getIdDocuments() {
-                return idDocuments;
-            }
 
-        //setters
-            public void setStudentList(ArrayList<Student> studentList) {
-                StudentList = studentList;
-            }
-
-            public void setIdDocuments(int idDocuments) {
-                this.idDocuments = idDocuments;
-            }
-
-            public void setClassSize(int classSize) {
-                ClassSize = classSize;
-            }
+    //setters
+        public void setIdDocuments(int idDocuments) {
+            this.idDocuments = idDocuments;
+        }
+        public void setDocDesc(String docDesc) {
+            DocDesc = docDesc;
+        }
+        public void setDocPath(String docPath) {
+        DocPath = docPath;
+        }
+        public void setDocName(String docName) {
+            DocName = docName;
+        }
 }

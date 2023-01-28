@@ -25,6 +25,12 @@ this.FirstName=FirstName;
         this.Email=Email;
         this.Matricule=Matricule;
     }
+    public Student(String FirstName, String LastName) {
+        this.FirstName=FirstName;
+
+        this.LastName=LastName;
+
+    }
 
     public String getEmail() {
         return Email;

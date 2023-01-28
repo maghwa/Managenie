@@ -1,13 +1,22 @@
 package sample.Controllers;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.*;
 import javafx.event.*;
+import javafx.util.Duration;
+import sample.DataBase.DataBaseConnection;
 import sample.Main;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class SignUp {
     public SignUp() {
     }
@@ -32,16 +41,95 @@ public class SignUp {
         checkRegister();
 
     }
-    private void checkRegister() throws IOException {
-        Main m2 = new Main();
-        if (username.getText().toString().equals("maghwa") && password.getText().toString().equals("2022") && firstName.getText().toString().equals("marwa")&& lastName.getText().toString().equals("elkamil")&& password2.getText().toString().equals("2022")) {
-            wrongSignup.setText("Sucess!!");
-            m2.changeScene("view/Home.fxml");
-      } else if (username.getText().isEmpty() && password.getText().isEmpty() && firstName.getText().isEmpty() && lastName.getText().isEmpty() && password2.getText().isEmpty()) {
-            wrongSignup.setText("Please enter your data");
-         } else {
-            wrongSignup.setText("Wrong data!");
-        }
-    }
+    @FXML
+    private Label quote;
+
+    private String message = "Set your goals high, and don’t stop till you get there";
+    private int charIndex = 0;
+
+
+   private void checkRegister() throws IOException {
+       Main m2 = new Main();
+
+
+       DataBaseConnection connectnow = new DataBaseConnection();
+       Connection connectDB = connectnow.getConnection();
+
+       String FirstName = firstName.getText();
+       String LastName = lastName.getText();
+       String UserName = username.getText();
+       String Password = password.getText();
+       String Password2 = password2.getText();
+
+
+
+
+
+       String insertFields = "INSERT INTO `Managenie_db`.`profile` (`T_first_name`, `T_last_name`, `username`, `password`) VALUES ('";
+       String insertValues = FirstName +"','"+ LastName +"','"+ UserName +"','"+ Password+"')";
+       String insertIntoRegister = insertFields + insertValues;
+
+       try{
+
+           if (firstName.getText().isBlank() == false || lastName.getText().isBlank() == false || username.getText().isBlank() == false || password.getText().isBlank() == false || password2.getText().isBlank() == false ) {
+               if(Password.equals(Password2)) {
+                   try {
+                       Statement statement = connectDB.createStatement();
+                       statement.executeUpdate(insertIntoRegister);
+
+                       wrongSignup.setText("Compte Crée Avec Succes !");
+                       wrongSignup.setTextFill(Color.GREEN);
+                       m2.changeScene("view/Home.fxml");
+                   } catch (SQLException ex) {
+                       wrongSignup.setText("Erreur");
+                       wrongSignup.setTextFill(Color.RED);
+
+                       throw new RuntimeException(ex);
+                   }
+               }else{
+                   wrongSignup.setText("Verifié la confirmation du mot de passe !");
+                   wrongSignup.setTextFill(Color.RED);
+
+               }
+
+           }else {
+               wrongSignup.setText("Veuillez Remplir Tous Les Cases");
+               wrongSignup.setTextFill(Color.RED);
+           }
+
+       }catch (Exception e){
+
+           wrongSignup.setText("Erreur");
+           wrongSignup.setTextFill(Color.RED);
+           e.printStackTrace();
+           e.getCause();
+
+       }
+
+
+
 
 }
+
+    public void initialize() {
+        //quote.setStyle("-fx-effect: dropshadow(gaussian, #f0c4f7, 5, 0.5, 0, 0);");
+        Timeline timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(0.1),
+                        new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                quote.setText(message.substring(0, charIndex++));
+                                if (charIndex > message.length()) {
+                                    charIndex = 0;
+                                }
+                            }
+                        }));
+        timeline.play();
+
+
+    }
+}
+
+

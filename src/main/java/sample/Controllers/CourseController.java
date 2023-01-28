@@ -174,4 +174,25 @@ public class CourseController {
     public void CourseDescrib(ActionEvent event) throws IOException{
         checkCourseDisc();
     }
+
+        @FXML
+        void AddC(ActionEvent  event) throws IOException {
+            checkAddCourse();
+
+        }
+
+
+
+        @FXML
+        void DeletC(ActionEvent  event) {
+
+        }
+
+        @FXML
+        void EditC(ActionEvent event) throws IOException {
+            checkEdCourse();
+
+        }
+
+
 }

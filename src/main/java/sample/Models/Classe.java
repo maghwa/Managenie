@@ -2,7 +2,7 @@ package sample.Models;
 
 import java.util.ArrayList;
 
-public class Classe extends Course {
+public class Classe  {
    //Classe Attributes
         private int idClasse;
         private int SizeClasse;

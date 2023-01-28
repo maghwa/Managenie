@@ -4,9 +4,22 @@ import java.util.Date;
 
 public class Attendance {
     //attributes
-        private int StudentMatricule;
-        private Date DateofAbsence;
-        private  Boolean Absent;
+        private String StudentName;
+
+    public Attendance() {
+        super();
+    }
+
+    private Date DateofAbsence;
+
+    public Attendance(String studentN, Date dateofAbsence, Boolean absent, Boolean justificated) {
+        StudentName = studentN;
+        DateofAbsence = dateofAbsence;
+        Absent = absent;
+        Justificated = justificated;
+    }
+
+    private  Boolean Absent;
         private Boolean Justificated;
 
     //methods
@@ -20,8 +33,8 @@ public class Attendance {
             public Date getDateofAbsence() {
                 return DateofAbsence;
             }
-            public int getStudentMatricule() {
-                return StudentMatricule;
+            public String getStudentName() {
+                return StudentName;
             }
         //setters
             public void setAbsent(Boolean absent) {
@@ -33,7 +46,7 @@ public class Attendance {
             public void setJustificated(Boolean justificated) {
                 Justificated = justificated;
             }
-            public void setStudentMatricule(int studentMatricule) {
-                StudentMatricule = studentMatricule;
+            public void setStudentName(String studentName) {
+                StudentName = studentName;
             }
 }

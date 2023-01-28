@@ -7,14 +7,10 @@ public class Teacher {
     private String LastName ;
     private String Email;
     private String Password;
-    private Float PhoneNum ;
+
     //teacher methods
 
         //getters
-            public Float getPhoneNum() {
-                return PhoneNum;
-            }
-
             public String getEmail() {
                 return Email;
             }
@@ -51,9 +47,6 @@ public class Teacher {
                 Password = password;
             }
 
-            public void setPhoneNum(Float phoneNum) {
-                PhoneNum = phoneNum;
-            }
 
             public void setUserName(String userName) {
                 UserName = userName;

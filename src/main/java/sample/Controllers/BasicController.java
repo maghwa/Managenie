@@ -49,17 +49,26 @@ public class BasicController {
         Main m2 = new Main();
         m2.changeScene("view/StudentHome.fxml");
     }
-    public static void checkAddStudent() throws IOException {
+    static void checkAddCourse() throws IOException {
+        Main m2 = new Main();
+        m2.changeScene("view/add_cours.fxml");
+    }
+    static void checkAddStudent() throws IOException {
         Main m1 = new Main();
         m1.changeScene("view/AddStudent.fxml");
     }
+    static void checkEdCourse()throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/EditCourse.fxml");
+    }
+
     static void checkProfile() throws IOException {
         Main m2 = new Main();
         m2.changeScene("view/Profile.fxml");
     }
     static void checkCourse() throws IOException {
         Main m2 = new Main();
-        m2.changeScene("view/cours.fxml");
+        m2.changeScene("view/CourseHome.fxml");
     }
     static void checkTodoList() throws IOException {
         Main m2 = new Main();
@@ -94,6 +103,11 @@ public class BasicController {
         Main m1 = new Main();
         m1.changeScene("view/SignUp.fxml");
    }
+    public static void checkLogin() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/Login.fxml");
+    }
+
     public static void checkCourseDisc() throws IOException {
         Main m1 = new Main();
         m1.changeScene("view/CourseDescrib.fxml");

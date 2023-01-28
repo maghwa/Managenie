@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="178.0" prefWidth="377.0" style="-fx-background-color: #1d326e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.UploadController">
+<AnchorPane prefHeight="225.0" prefWidth="380.0" style="-fx-background-color: #1d326e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.UploadController">
    <children>
-      <Text fill="#b1d6f7" layoutX="39.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a document to this course">
+      <Text fill="#b1d6f7" layoutX="54.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a document to this course">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Text>
-      <Label layoutX="39.0" layoutY="40.0" text="Name :" textFill="#b1d6f7">
+      <Label layoutX="70.0" layoutY="68.0" text="Name :" textFill="#b1d6f7">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="80.0" text="Type :" textFill="#b1d6f7">
+      <Label layoutX="70.0" layoutY="108.0" text="Description :" textFill="#b1d6f7">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="127.0" text="Upload :" textFill="#b1d6f7">
+      <Label layoutX="70.0" layoutY="155.0" text="Upload :" textFill="#b1d6f7">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="128.0" layoutY="38.0" style="-fx-background-color: #b1d6f7;" />
-      <Button fx:id="upload_btn" alignment="BASELINE_LEFT" layoutX="127.0" layoutY="124.0" mnemonicParsing="false" onAction="#browser" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #b1d6f7;" text="Choose file">
+      <TextField fx:id="DocNameField" layoutX="159.0" layoutY="66.0" style="-fx-background-color: #b1d6f7;" />
+      <Button fx:id="upload_btn" alignment="BASELINE_LEFT" layoutX="158.0" layoutY="152.0" mnemonicParsing="false" onAction="#browser" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #b1d6f7;" text="Choose file">
          <font>
             <Font name="Arial Black" size="10.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="type" layoutX="127.0" layoutY="77.0" prefWidth="150.0" style="-fx-background-color: #b1d6f7;" />
-      <Button fx:id="back_btn" layoutX="321.0" layoutY="8.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #1d326e;" textFill="TRANSPARENT">
+      <Button fx:id="back_btn" layoutX="321.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #1d326e;" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/close%20(1).png" />
+                  <Image url="@../Icons/back.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
+      <TextField fx:id="DocDescField" layoutX="159.0" layoutY="106.0" style="-fx-background-color: #b1d6f7;" />
+      <AnchorPane layoutX="-161.0" layoutY="-200.0" prefHeight="200.0" prefWidth="200.0" />
+      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="6.0" layoutY="4.0">
+         <image>
+            <Image url="@../Icons/cloud-computing%20(1).png" />
+         </image>
+      </ImageView>
+      <Line endX="270.3999938964844" endY="-0.39998626708984375" layoutX="109.0" layoutY="42.0" startX="-109.00001525878906" startY="-0.39998626708984375" stroke="#b1d6f7" />
+      <Label fx:id="AjouMessage" layoutX="176.0" layoutY="193.0" />
    </children>
 </AnchorPane>

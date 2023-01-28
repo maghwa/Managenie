@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +23,7 @@
       </ImageView>
       <Button fx:id="profile" layoutX="933.0" layoutY="27.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: #94aace;" visible="false" />
       <Circle fill="#000a2c" layoutX="441.0" layoutY="62.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="509.0" layoutY="44.0" prefHeight="42.0" prefWidth="142.0" text="Course s Name" textFill="#000a2c">
+      <Label layoutX="503.0" layoutY="40.0" prefHeight="42.0" prefWidth="142.0" text="C++" textFill="#000a2c">
          <font>
             <Font size="18.0" />
          </font>
@@ -31,7 +32,7 @@
          <graphic>
             <ImageView fx:id="EditIcon" fitHeight="30.0" fitWidth="30.0">
                <image>
-                  <Image url="@../Icons/edit%20(1).png" />
+                  <Image url="@../Icons/cloud-computing.png" />
                </image>
             </ImageView>
          </graphic>
@@ -40,9 +41,9 @@
          <children>
             <VBox alignment="CENTER" layoutX="14.0" prefHeight="139.0" prefWidth="247.0" spacing="5.0" style="-fx-background-color: #000a2c; -fx-background-radius: 10 0 0 10;">
                <children>
-                  <Label fx:id="FirstName" text="Name :" textFill="#b1d6f7" />
-                  <Label fx:id="LastName" layoutX="10.0" layoutY="10.0" text="Nº Session :" textFill="#b1d6f7" />
-                  <Label fx:id="Matricule" layoutX="10.0" layoutY="45.0" text="Duration :" textFill="#b1d6f7" />
+                  <Label fx:id="CourseName" text="Name : C++" textFill="#b1d6f7" />
+                  <Label fx:id="NS" layoutX="10.0" layoutY="10.0" text="Nº Session : 40" textFill="#b1d6f7" />
+                  <Label fx:id="MatricuDle" layoutX="10.0" layoutY="45.0" text="Duration : 20" textFill="#b1d6f7" />
                </children>
             </VBox>
             <VBox alignment="CENTER" layoutX="267.0" prefHeight="139.0" prefWidth="254.0" style="-fx-background-color: #000a2c; -fx-background-radius: 0 10 10 0;">
@@ -50,16 +51,16 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <Label fx:id="Birthday" text="Time/Session :" textFill="#b1d6f7" />
-                  <Label fx:id="Email" layoutX="40.0" layoutY="72.0" text="Nº Classes :" textFill="#b1d6f7" />
-                  <Label fx:id="Phone" layoutX="48.0" layoutY="81.0" text="Nº Students :" textFill="#b1d6f7" />
+                  <Label fx:id="TS" text="Time/Session :2h" textFill="#b1d6f7" />
+                  <Label fx:id="NStu" layoutX="40.0" layoutY="72.0" text="Nº Students : 29 " textFill="#b1d6f7" />
+                  <Label fx:id="Nc" text="Nº Classes : 1" textFill="#b1d6f7" />
                </children>
             </VBox>
             <TableView layoutX="20.0" layoutY="237.0" prefHeight="224.0" prefWidth="510.0" style="-fx-background-radius: 15; -fx-background-color: #b1d6f7; -fx-border-radius: 15;">
                <columns>
-                  <TableColumn fx:id="CourseColumn" prefWidth="101.59991455078125" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15 0 0 0; -fx-border-radius: 15 0 0 0;" text="Document Name" />
-                  <TableColumn fx:id="StartDayColumn" prefWidth="88.800048828125" style="-fx-background-color: b1d6f7;" text="Upload Day" />
-                  <TableColumn fx:id="ClassColumn" prefWidth="26.39996337890625" style="-fx-background-color: b1d6f7; -fx-background-radius: 0;" text="Type" />
+                  <TableColumn fx:id="DocN" prefWidth="101.59991455078125" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15 0 0 0; -fx-border-radius: 15 0 0 0;" text="Document Name" />
+                  <TableColumn fx:id="DocDay" prefWidth="88.800048828125" style="-fx-background-color: b1d6f7;" text="Upload Day" />
+                  <TableColumn fx:id="ClassCoDocTypelumn" prefWidth="26.39996337890625" style="-fx-background-color: b1d6f7; -fx-background-radius: 0;" text="Type" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -70,7 +71,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <Label fx:id="FirstName1" prefHeight="58.0" prefWidth="479.0" text="Description of the Course: " textFill="#b1d6f7" />
+                  <TextArea fx:id="Description" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0e1d56; -fx-border-color: #0e1d56;" text="C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique. Ses bonnes performances, et sa compatibilité avec le C en font un des langages de programmation les plus utilisés dans les applications où la performance est critique." />
                </children>
             </VBox>
          </children>

@@ -1,22 +1,48 @@
 package sample.Controllers;
 
+
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import sample.DataBase.DataBaseConnection;
+import sample.Models.Course;
+import sample.Models.Document;
+import sample.Models.Student;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static sample.Controllers.BasicController.*;
 
-public class CourseDiscController {
+public class CourseDiscController implements Initializable
+{
+    ObservableList<Document> DocObservableList = FXCollections.observableArrayList();
+    ObservableList<Course> CourseObservableList = FXCollections.observableArrayList();
 
+    Course course= new Course();
     int i=0;
+    @FXML
+    private TableView<Document> DocTableView;
     @FXML
     private Button Absence;
 
@@ -109,6 +135,26 @@ public class CourseDiscController {
 
     @FXML
     private ImageView ProfileIcon;
+
+    @FXML
+    private Label CourseName;
+
+    @FXML
+    private Label D;
+    @FXML
+    private Label TS;
+
+    @FXML
+    private Label Desc;
+
+    @FXML
+    private Label NS;
+
+    @FXML
+    private Label NStu;
+
+    @FXML
+    private Label Nc;
 
     @FXML
     private Button Upload;
@@ -216,8 +262,9 @@ public class CourseDiscController {
 
     @FXML
     void Upload(ActionEvent event) throws IOException {
+
+        checkUploadFile();
         //System.out.println(getClass().getResource("/upload.fxml"));
-        BasicController.checkUploadFile();
         //Main.popup();
         /*try {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/upload.fxml"));
@@ -253,6 +300,86 @@ public class CourseDiscController {
             }
 */
 
+
+    }
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String StudentViewQuery = "SELECT Course_name ,nofSession ,Time_session, Duration, Description FROM course;";
+
+        try {
+
+            Statement statement = connectDB.createStatement();
+            ResultSet queryOutput = statement.executeQuery(StudentViewQuery);
+
+            while (queryOutput.next()){
+
+
+                String queryCourseName = queryOutput.getString("Course_name");
+                String queryNs = queryOutput.getString("nofSession");
+                String queryTs = queryOutput.getString("Time_session");
+                String queryD = queryOutput.getString("Duration");
+                String queryDesc = queryOutput.getString("description ");
+
+                //Populate the Observable list of products
+                course=new Course(queryCourseName,queryTs,queryD,queryNs,queryDesc);
+                CourseObservableList.add(course);
+
+            }
+
+            // Correspending each Column in interface with column in database
+
+
+            CourseName.setText("course.getName()");
+            D.setText("course.getDuration()");
+            TS.setText("course.getTime_Session");
+            NStu.setText("course.getNofStudent");
+            NS.setText("course.getNofSession");
+
+
+            // insert Values oF StudentObservableList in the StudentTableView
+
+            DocTableView.setItems(DocObservableList);
+
+//            //initial filtered list
+//            FilteredList<Student> filteredData = new FilteredList<>(CourseObservableList, b -> true);
+//
+//            SearchField.textProperty().addListener((observable ,oldValue, newValue)-> {
+//                filteredData.setPredicate(student -> {
+//
+//                    if (newValue.isEmpty() || newValue.isBlank() || newValue == null){
+//                        return true;
+//                    }
+//
+//                    String searchKeyword = newValue.toLowerCase();
+//
+//                    if (student.getFirstName().toLowerCase().indexOf(searchKeyword) > -1){
+//                        return true;
+//                    } else if (student.getLastName().toLowerCase().indexOf(searchKeyword) > -1) {
+//                        return true;
+//                    } else if (student.getEmail().toLowerCase().indexOf(searchKeyword) > -1){
+//                        return true;
+//                    } else if (student.getMatricule().toLowerCase().indexOf(searchKeyword) > -1){
+//                        return true;
+//                    }else {
+//                        return false;
+//                    }
+//                });
+//            });
+//
+//            SortedList<Student> sortedData = new SortedList<>(filteredData);
+//
+//            sortedData.comparatorProperty().bind(CourseTableView.comparatorProperty());
+//
+//            CourseTableView.setItems(sortedData);
+//
+//
+        }catch (SQLException e){
+            Logger.getLogger(StudentsController.class.getName()).log(Level.SEVERE , null , e);
+            e.printStackTrace();
+        }
 
     }
 

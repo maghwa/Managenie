@@ -5,15 +5,29 @@ import java.util.ArrayList;
 public class Course {
     //Course Attributs
         private String Description;
-        private int Duration;
+        private String Duration;
         private String Name;
-        private int NofSession;
-        private int Time_Session;
-        private int NofStudent;
-        private int NofClasses;
-        private ArrayList<Document> DocumentList;
+        private String NofSession;
+        private String Time_Session;
+        private String NofStudent;
+        private String NofClasses;
+
+    public Course() {
+        super();
+    }
+
+    private ArrayList<Document> DocumentList;
         private ArrayList<Classe> ClassList;
     //Course Methods
+
+    public Course(String name ,String time_Session,String duration, String nofSession, String description) {
+        Description = description;
+        Duration = duration;
+        Name = name;
+        NofSession = nofSession;
+        Time_Session = time_Session;
+
+    }
         //getters
             public ArrayList<Classe> getClassList() {
                 return ClassList;
@@ -23,23 +37,23 @@ public class Course {
                 return DocumentList;
             }
 
-            public int getDuration() {
+            public String getDuration() {
                 return Duration;
             }
 
-            public int getNofClasses() {
+            public String getNofClasses() {
                 return NofClasses;
             }
 
-            public int getNofSession() {
+            public String getNofSession() {
                 return NofSession;
             }
 
-            public int getNofStudent() {
+            public String getNofStudent() {
                 return NofStudent;
             }
 
-            public int getTime_Session() {
+            public String getTime_Session() {
                 return Time_Session;
             }
 
@@ -64,7 +78,7 @@ public class Course {
                 DocumentList = documentList;
             }
 
-            public void setDuration(int duration) {
+            public void setDuration(String duration) {
                 Duration = duration;
             }
 
@@ -72,19 +86,19 @@ public class Course {
                 Name = name;
             }
 
-            public void setNofClasses(int nofClasses) {
+            public void setNofClasses(String nofClasses) {
                 NofClasses = nofClasses;
             }
 
-            public void setNofSession(int nofSession) {
+            public void setNofSession(String nofSession) {
                 NofSession = nofSession;
             }
 
-            public void setNofStudent(int nofStudent) {
+            public void setNofStudent(String nofStudent) {
                 NofStudent = nofStudent;
             }
 
-            public void setTime_Session(int time_Session) {
+            public void setTime_Session(String time_Session) {
                 Time_Session = time_Session;
             }
 }

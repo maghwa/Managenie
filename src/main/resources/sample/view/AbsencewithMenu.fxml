@@ -19,16 +19,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="959.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.AbsenceController">
    <children>
-      <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-12.0" layoutY="-19.0">
+      <ImageView fitHeight="625.0" fitWidth="981.0" layoutX="-22.0" layoutY="-1.0">
          <image>
             <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
-      <TableView layoutX="190.0" layoutY="172.0" prefHeight="378.0" prefWidth="613.0" style="-fx-background-color: #b1d6f7; -fx-border-radius: 20; -fx-background-radius: 20;" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="172.0">
+      <TableView fx:id="AbsenceTableView" layoutX="190.0" layoutY="172.0" prefHeight="378.0" prefWidth="613.0" style="-fx-background-color: #b1d6f7; -fx-border-radius: 20; -fx-background-radius: 20;" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="172.0">
          <columns>
-            <TableColumn fx:id="NameColl" editable="false" prefWidth="335.99998474121094" style="-fx-background-color: #b1d6f7; -fx-text-fill: #000000;" text="Student Full Name" />
-            <TableColumn fx:id="AbsentColl" editable="false" minWidth="0.0" prefWidth="145.60003662109375" style="-fx-background-color: #b1d6f7;" text="Absent" />
-            <TableColumn fx:id="JustifCol" editable="false" prefWidth="131.2000732421875" style="-fx-background-color: #b1d6f7; -fx-text-fill: #b1d6f7;" text="Justificated" />
+            <TableColumn fx:id="SNameColumn" editable="false" prefWidth="201.6000213623047" style="-fx-background-color: #b1d6f7; -fx-text-fill: #000000;" text="Student Full Name" />
+            <TableColumn fx:id="AbsentColl" editable="false" minWidth="0.0" prefWidth="134.39996337890625" style="-fx-background-color: #b1d6f7;" text="Absent" />
+            <TableColumn fx:id="JustifCol" editable="false" prefWidth="120.0" style="-fx-background-color: #b1d6f7; -fx-text-fill: #b1d6f7;" text="Justificated" />
+            <TableColumn fx:id="DateofA" prefWidth="156.0" style="-fx-Background-Color: #b1d6f7;" text="Date" />
          </columns>
       </TableView>
       <Button fx:id="Edit" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: #ffffff10;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -68,7 +69,7 @@
             <Font name="Dubai Bold" size="14.0" />
          </font>
       </MenuButton>
-      <TextField layoutX="197.0" layoutY="123.0" prefHeight="35.0" prefWidth="319.0" promptText="Search" style="-fx-background-radius: 15;" />
+      <TextField fx:id="SearchField" layoutX="197.0" layoutY="123.0" prefHeight="35.0" prefWidth="319.0" promptText="Search" style="-fx-background-radius: 15;" />
       <Button layoutX="483.0" layoutY="128.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
       <ImageView fitHeight="61.0" fitWidth="24.0" layoutX="486.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
          <image>

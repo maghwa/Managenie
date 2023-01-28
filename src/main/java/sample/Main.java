@@ -19,7 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         stg = primaryStage;
         primaryStage.setResizable(false);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/Login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/login.fxml"));
         fxmlLoader.setRoot(new AnchorPane());
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
@@ -28,10 +28,15 @@ public class Main extends Application {
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("ManaGenie!!");
         primaryStage.show();
+
+
+
+
     }
     public void changeScene(String fxml) throws IOException {
         Parent pane= FXMLLoader.load(getClass().getResource(fxml));
         stg.setScene(new Scene(pane));
+
     }
     public static void main(String[] args) {
         launch(args);
