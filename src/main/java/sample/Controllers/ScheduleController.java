@@ -4,10 +4,13 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 
 import static sample.Controllers.BasicController.*;
@@ -15,7 +18,11 @@ import static sample.Controllers.BasicController.checkAbsence;
 
 public class ScheduleController {
     int i=0;
-
+    File file =null;
+    String path=null;
+    String fname=null;
+    int s=0;
+    byte pimage[]=null;
     @FXML
     private Button Absence;
 
@@ -48,6 +55,8 @@ public class ScheduleController {
 
     @FXML
     private Button Home;
+    @FXML
+    private Button Upload_btn;
 
     @FXML
     private ImageView HomeIcon;
@@ -69,7 +78,9 @@ public class ScheduleController {
 
     @FXML
     private Pane MenuSlider;
+    File selectedFile;
 
+    String imagePath;
     @FXML
     private Button Profile;
 
@@ -84,6 +95,8 @@ public class ScheduleController {
 
     @FXML
     private ImageView studentIcon;
+    @FXML
+    private ImageView imageView;
 
 
 
@@ -171,5 +184,41 @@ public class ScheduleController {
         checkAbsence();
 
     }
+//    FileChooser fileChooser = new FileChooser();
+//    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("image files (.jpg", ".jpg");
+//        fileChooser.getExtensionFilters().add(extFilter);
+//        private void Upload(ActionEvent event) {
+//        File file = fileChooser.showOpenDialog(null);
+//        if (file != null) {
+//            // display the image
+//            Image image = new Image(file.toURI().toString());
+//            imageView.setImage(image);
+//            String path=file.getAbsolutePath();
+//
+//        }
+//    }
+@FXML
+void Upload(ActionEvent event) {
+    if(Upload_btn.isHover()) {
+
+        FileChooser fileChooser = new FileChooser();
+        selectedFile =  fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            Image image = new Image(selectedFile.toURI().toString());
+            imageView.setImage(image);
+
+
+        } else {
+
+            //ImageProfie.setImage(ImageProfie.getImage());
+        }
+
+
+
+}
+
+
+}
 
 }

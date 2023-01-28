@@ -57,7 +57,7 @@ public class AddStudentController {
         DataBaseConnection connectnow = new DataBaseConnection();
         Connection connectDB = connectnow.getConnection();
 
-        String FirstName = FirstNameField.getText();
+        String FirstName = FirstNameField.getText();//FirstNameField fxml
         String LastName = LastNameField.getText();
         String Email = EmailField.getText();
         String Matricule = MatriculeField.getText();

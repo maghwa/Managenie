@@ -92,7 +92,7 @@ public class BasicController {
     }
     static void checkHelp() throws IOException {
         Main m1 = new Main();
-        m1.changeScene("view/Help.fxml");
+        m1.changeScene("view/Help1.fxml");
     }
     public static void checkHome() throws IOException {
         Main m = new Main();
