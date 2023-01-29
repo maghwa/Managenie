@@ -1,0 +1,100 @@
+create database Managenie_DB;
+use Managenie_DB;
+drop table profile;
+CREATE TABLE Profile(
+Teacher_id int NOT NULL primary key unique  AUTO_INCREMENT,
+
+username VARCHAR(25) NOT NULL unique,
+password VARCHAR(255) NOT NULL,
+T_first_name VARCHAR(255) NOT NULL,
+T_last_name VARCHAR(255) NOT NULL
+
+);
+CREATE TABLE students(
+student_id int NOT NULL primary key unique  AUTO_INCREMENT,
+email VARCHAR(255) NOT NULL unique,
+first_name VARCHAR(255) NOT NULL,
+studentslast_name VARCHAR(255) NOT NULL,
+matricule VARCHAR(255) NOT NULL,
+Classe_id int references Classe(classe_id)
+);
+CREATE TABLE Course(
+Course_id int NOT NULL primary key unique  AUTO_INCREMENT,
+Course_name VARCHAR(255) NOT NULL,
+profile_picture_url VARCHAR(255),
+description varchar(2000),
+Duration int,
+nofSession int,
+Time_session  int ,
+date_created datetime NOT NULL,
+Classe_id int references Classe(classe_id)
+
+);
+CREATE TABLE Classe(
+Classe_id int NOT NULL primary key unique  AUTO_INCREMENT,
+Classe_name VARCHAR(255) NOT NULL,
+Classe_size int,
+Student_id int references Student(student_id),
+Course_id int references  Course(Course_id)
+
+);
+
+CREATE TABLE Schedule(
+Sched_id int NOT NULL primary key unique  AUTO_INCREMENT,
+Schedule_picture_url VARCHAR(255)
+);
+Create Table TodoList(
+TodoList_id int not null primary key unique auto_increment,
+Creation_date datetime NOT NULL,
+Due_date datetime,
+TodoList_name VARCHAR(255) 
+);
+CREATE TABLE quotes(
+quotes_id int not null primary key unique auto_increment,
+Quote Varchar(300)
+);
+use Managenie_DB;
+drop table Document;
+CREATE TABLE Document(
+Doc_id int NOT NULL primary key unique  AUTO_INCREMENT,
+Description VARCHAR(255) NOT NULL,
+DocName  VARCHAR(255) NOT NULL,
+DocPath  VARCHAR(255) NOT NULL,
+Course_id int references  Course(Course_id)
+
+);
+Create Table Absence (
+Abs_id int NOT NULL primary key unique  AUTO_INCREMENT,
+Absent bool NOT NULL ,
+Justif bool NOT NULL ,
+DateofA date,
+StudentFName Varchar(255) references  Students(first_name),
+StudentLName Varchar(255)  references  Students(last_name)
+
+);
+Use Managenie_db;
+Create Table Grades(
+Grades_id int  primary key unique,
+Student_id int references Student(student_id),
+Grade int,
+Course_id int references  Course(Course_id)
+);
+
+Create Table Grades(
+Grades_id int  primary key unique,
+S_id int references Student(student_id),
+Grade int,
+Course_id int references  Course(Course_id)
+);
+
+
+
+select * from absence;
+INSERT INTO `managenie_db`.`absence` (`Abs_id`, `Absent`, `Justif`, `DateofA`, `StudentFName`, `StudentLName`) VALUES ('1', '0', '0', '2022/10/10', 'Rita ', 'Sqalli');
+INSERT INTO `managenie_db`.`absence` (`Abs_id`, `Absent`, `Justif`, `DateofA`, `StudentFName`, `StudentLName`) VALUES ('2', '1', '1', '2022/3/3', 'Rachid', 'El Alami');
+select * from profile;
+INSERT INTO `managenie_db`.`profile` (`Teacher_id`, `username`, `password`, `T_first_name`, `T_last_name`) VALUES ('1', 'nilam', '0102', 'Nilam', 'El Amrrani');
+INSERT INTO `managenie_db`.`profile` (`Teacher_id`, `username`, `password`, `T_first_name`, `T_last_name`) VALUES ('2', 'marwa', '2022', 'marwa', 'El Kamil');
+select * from grades; 
+INSERT INTO `managenie_db`.`grades` (`Grades_id`, `S_id`, `Grade`, `Course_id`) VALUES ('1', '1', '19', '1');
+INSERT INTO `managenie_db`.`grades` (`Grades_id`, `S_id`, `Grade`, `Course_id`) VALUES ('2', '2', '18', '1');
