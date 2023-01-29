@@ -100,11 +100,16 @@ for example on the Absence Interface
 
 ![d9d4a777-22f9-4444-9549-fd70ee9f7a4c](https://user-images.githubusercontent.com/87017143/215354605-609380c6-56f8-4fdd-aa77-28515ee02b4c.jpg)
 
+###Profile Interface:
+
+![f32db5a0-d7ef-40aa-9086-bff139d53bf7](https://user-images.githubusercontent.com/87017143/215354694-c40b83bc-eaa4-4ade-b8cb-ffec750b2387.jpg)
+
 ### Grades Interface:
 ![a985e39e-158d-4fca-99a8-ee2e7cf3326b](https://user-images.githubusercontent.com/87017143/215354617-90b1d2aa-3f53-47b1-a827-678fce48ba3d.jpg)
 
 ### Documentation/help Interface:
 
+![742fc77e-e7af-46eb-9750-6a9e7743bd24](https://user-images.githubusercontent.com/87017143/215354668-339848f4-4e69-4cd0-950e-532401580bae.jpg)
 
 
 
