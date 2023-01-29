@@ -1,19 +1,39 @@
 package sample.Controllers;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
-
+import sample.DataBase.DataBaseConnection;
+import sample.Models.Grade;
+import sample.Models.Student;
+import javafx.fxml.Initializable;
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static sample.Controllers.BasicController.*;
 import static sample.Controllers.BasicController.checkAbsence;
 
-public class GradesController {
+public class GradesController implements Initializable {
         int i = 0;
+        Grade grade =new Grade();
         @FXML
         private Button MenuB;
 
@@ -21,7 +41,17 @@ public class GradesController {
         private ImageView MenuIcon;
 
         @FXML
+        private TableColumn<Grade,Integer> Student;
+
+        @FXML
+        private TableColumn<Student,Integer> Grade;
+
+        @FXML
         private Pane MenuSlider;
+
+        @FXML
+        private TextField searchfield;
+
 
         @FXML
         private Button Home;
@@ -82,7 +112,10 @@ public class GradesController {
 
         @FXML
         private ImageView EditIcon;
+        @FXML
+        private TableView<Grade> GradeTableView;
 
+        ObservableList<Grade> GradeObservableList = FXCollections.observableArrayList();
         @FXML
         void Menu(ActionEvent event) {
 
@@ -111,6 +144,81 @@ public class GradesController {
 
 
         }
+        @Override
+        public void initialize(URL arg0, ResourceBundle arg1) {
+                DataBaseConnection connectNow = new DataBaseConnection();
+                Connection connectDB = connectNow.getConnection();
+
+                String GradeViewQuery = "SELECT Sid,Grade FROM Grades;";
+                String StudentViewQuery = "SELECT first_name,last_name WHERE Student_id== Sid;";
+
+
+                try {
+
+                        Statement statement = connectDB.createStatement();
+                        ResultSet queryOutput = statement.executeQuery(GradeViewQuery);
+                        ResultSet queryOutput1 = statement.executeQuery(StudentViewQuery);
+
+                        while (queryOutput.next()){
+
+
+                                int queryStudent = queryOutput.getInt("Grade");
+                                int queryGrade = queryOutput.getInt("Sid");
+
+
+                                //Populate the Observable list of products
+                                GradeObservableList.add(new Grade(queryStudent,queryGrade));
+
+
+                        }
+
+                        // Correspending each Column in interface with column in database
+
+                        Student.setCellValueFactory(new PropertyValueFactory<>("idStudent"));
+                        Grade.setCellValueFactory(new PropertyValueFactory<>("Mark"));
+
+
+
+                        // insert Values oF GradesObservableList in the StudentTableView
+                        GradeTableView.setItems(GradeObservableList);
+
+                        //initial filtered list
+                        FilteredList<Grade> filteredData = new FilteredList<>(GradeObservableList, b -> true);
+
+                        searchfield.textProperty().addListener((observable ,oldValue, newValue)-> {
+                                filteredData.setPredicate(student -> {
+
+                                        if (newValue.isEmpty() || newValue.isBlank() || newValue == null){
+                                                return true;
+                                        }
+
+                                        String searchKeyword = newValue.toLowerCase();
+
+                                        if (grade.getIdStudent().toString().toLowerCase().indexOf(searchKeyword) > -1){
+                                                return true;
+                                        } else if (grade.getMark().toString().toLowerCase().indexOf(searchKeyword) > -1) {
+                                                return true;
+
+                                        }else {
+                                                return false;
+                                        }
+                                });
+                        });
+
+                        SortedList<Grade> sortedData = new SortedList<>(filteredData);
+
+                        sortedData.comparatorProperty().bind(GradeTableView.comparatorProperty());
+
+                        GradeTableView.setItems(sortedData);
+
+
+                }catch (SQLException e){
+                        Logger.getLogger(GradesController.class.getName()).log(Level.SEVERE , null , e);
+                        e.printStackTrace();
+                }
+
+        }
+
 
         @FXML
         void GoGrades(ActionEvent event) throws IOException {
@@ -166,7 +274,7 @@ public class GradesController {
 
         @FXML
         void GoStudent(ActionEvent event) throws IOException {
-                checkAbsence();
+                checkStudent();
 
         }
 }

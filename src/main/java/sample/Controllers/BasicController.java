@@ -107,6 +107,14 @@ public class BasicController {
         Main m1 = new Main();
         m1.changeScene("view/Login.fxml");
     }
+    public static void checkTodo1() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/To-Do list N°1.fxml");
+    }
+    public static void checkTodo2() throws IOException {
+        Main m1 = new Main();
+        m1.changeScene("view/To-Do list N°2.fxml");
+    }
 
     public static void checkCourseDisc() throws IOException {
         Main m1 = new Main();

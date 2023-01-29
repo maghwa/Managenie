@@ -1,14 +1,26 @@
 package sample.Models;
 
 public class Grade {
-    private int idStudent;
+
+    private Integer idStudent;
     private String TestName;
-    private int Mark;
-//getters
-    public int getIdStudent() {
+    private Integer Mark;
+    //constructer
+    public Grade(int idStudent, int mark) {
+        this.idStudent = idStudent;
+
+        Mark = mark;
+    }
+
+    public Grade() { super ();
+    }
+
+
+    //getters
+    public Integer getIdStudent() {
         return idStudent;
     }
-    public int getMark() {
+    public Integer getMark() {
         return Mark;
     }
     public String getTestName() {

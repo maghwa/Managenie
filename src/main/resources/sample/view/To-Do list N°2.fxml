@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ProfileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="921.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.TodoListController">
    <children>
-      <ImageView fitHeight="637.0" fitWidth="981.0" layoutX="-2.0" layoutY="-9.0">
+      <ImageView fitHeight="640.0" fitWidth="1167.0" layoutX="-246.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Background_flou.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="605.0" prefWidth="54.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Button fx:id="MenuB" mnemonicParsing="false" style="-fx-background-color: #ffffff10;" />
+      <Button fx:id="Edit" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox layoutX="473.0" layoutY="96.0" prefHeight="26.0" prefWidth="291.0" AnchorPane.leftAnchor="473.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="96.0">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </HBox>
+      <Label layoutX="404.0" layoutY="70.0" text="To-Do list N°2">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Pane layoutX="212.0" layoutY="122.0" prefHeight="422.0" prefWidth="557.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;">
+         <children>
+            <Line endX="100.0" layoutX="324.0" layoutY="106.0" startX="-189.79998779296875" stroke="#0e1d56" />
+            <Label layoutX="65.0" layoutY="29.0" text="Creation date : " textFill="#0e1d56">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="96.0" layoutY="60.0" prefHeight="25.0" prefWidth="75.0" text="Due date :" textFill="#0e1d56">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <DatePicker layoutX="179.0" layoutY="60.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: TRANSPARENT;" />
+            <TextArea layoutX="50.0" layoutY="131.0" prefHeight="258.0" prefWidth="459.0" style="-fx-background-radius: TRANSPARENT;" />
+            <DatePicker layoutX="179.0" layoutY="29.0" showWeekNumbers="true" style="-fx-background-radius: 15; -fx-background-color: TRANSPARENT;" />
+         </children>
+      </Pane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="605.0" prefWidth="54.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane fx:id="MenuSlider" layoutX="1.0" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -166,21 +189,5 @@
             </Button>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="44.0" fitWidth="43.0" layoutX="455.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/user.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="536.0" layoutY="31.0" text="Profile " textFill="#000a2c">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <TableView layoutX="231.0" layoutY="156.0" prefHeight="350.0" prefWidth="585.0" style="-fx-background-color: b1d6f7; -fx-background-radius: 15;">
-        <columns>
-          <TableColumn id="Column1" prefWidth="295.9999694824219" style="-fx-Background-color: b1d6f7; -fx-Background-radius: 15 0 0 0; -fx-Border-radius: 15 0 0 0;" />
-          <TableColumn id="Column2" prefWidth="288.79998779296875" style="-fx-background-color: b1d6f7; -fx-border-radius: 15 0 0 0; -fx-background-radius: 0 15 0 0;" />
-        </columns>
-      </TableView>
    </children>
 </AnchorPane>

@@ -65,7 +65,7 @@
             <Line endX="100.0" layoutX="297.0" layoutY="46.0" startX="2.4000244140625" startY="7.62939453125E-6" />
             <Circle fill="#000a2c" layoutX="160.0" layoutY="46.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="#000a2c" layoutX="293.0" layoutY="46.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Hyperlink fx:id="login" layoutX="274.0" layoutY="455.0" onAction="#Register" text="Login" textFill="WHITE" />
+            <Hyperlink fx:id="login" layoutX="274.0" layoutY="455.0" onAction="#Login" text="Login" textFill="WHITE" />
             <Label layoutX="140.0" layoutY="458.0" text="Do you have an account?" textFill="WHITE" />
             <Label fx:id="wrongSignup" layoutX="186.0" layoutY="69.0" textFill="RED" />
          </children>

@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static sample.Controllers.BasicController.checkLogin;
+import static sample.Controllers.QuotedayController.getRandomStringFromDB;
 
 public class SignUp {
     public SignUp() {
@@ -46,7 +47,7 @@ public class SignUp {
     @FXML
     private Label quote;
 
-    private String message = "Set your goals high, and don’t stop till you get there";
+    private String message = getRandomStringFromDB();
     private int charIndex = 0;
 
 
@@ -140,4 +141,5 @@ public class SignUp {
 
 
 }
+
 

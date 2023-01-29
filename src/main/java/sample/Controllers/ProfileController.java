@@ -11,10 +11,9 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 import static sample.Controllers.BasicController.*;
-import static sample.Controllers.BasicController.checkAbsence;
 
-public class TodoListController {
-    int i = 0;
+public class ProfileController {
+    int i=0;
 
     @FXML
     private Button Absence;
@@ -33,12 +32,6 @@ public class TodoListController {
 
     @FXML
     private Button Courses;
-
-    @FXML
-    private Button Edit;
-
-    @FXML
-    private ImageView EditIcon;
 
     @FXML
     private Button Grades;
@@ -62,15 +55,19 @@ public class TodoListController {
     private Button Logout;
 
     @FXML
-    private ImageView LogoutIcon;
+    private Button Logout1;
+
     @FXML
-    private Pane MenuSlider;
+    private ImageView LogoutIcon;
 
     @FXML
     private Button MenuBOpen;
 
     @FXML
-    private ImageView MenuIcon;
+    private ImageView MenuIconOpen;
+
+    @FXML
+    private Pane MenuSlider;
 
     @FXML
     private Button Profile;
@@ -84,6 +81,63 @@ public class TodoListController {
     @FXML
     private ImageView TodolistIcon;
 
+    @FXML
+    private ImageView studentIcon;
+
+    @FXML
+    void GoGrades(ActionEvent event) throws IOException {
+        checkGrades();
+
+    }
+
+    @FXML
+    void GoTodoList(ActionEvent event)throws IOException {
+        checkTodoList();
+
+    }
+
+    @FXML
+    void GoSchedule(ActionEvent event) throws IOException {
+        checkSchedule();
+    }
+    @FXML
+    void Logout(ActionEvent event) throws IOException{
+        checkLogout();
+    }
+
+
+    @FXML
+    void GoCourse(ActionEvent event) throws IOException {
+        checkCourse();
+    }
+
+
+    @FXML
+    void GoHelp(ActionEvent event) throws IOException {
+        checkHelp();
+
+    }
+
+    @FXML
+    void GoProfile(ActionEvent event) throws IOException {
+        checkProfile();
+    }
+
+    @FXML
+    void GoAbsence(ActionEvent event)throws IOException {
+        checkAbsence();
+
+    }
+    @FXML
+    void GoHome (ActionEvent event) throws IOException {
+        checkHome();
+
+    }
+    @FXML
+    void GoStudent(ActionEvent event)throws IOException {
+        checkStudent();
+
+    }
     @FXML
     void Menu(ActionEvent event) {
 
@@ -111,78 +165,7 @@ public class TodoListController {
         }
 
 
-    }
-
-    @FXML
-    void GoGrades(ActionEvent event) throws IOException {
-        checkGrades();
 
     }
-
-    @FXML
-    void GoTodoList(ActionEvent event) throws IOException {
-        checkTodoList();
-
-    }
-
-    @FXML
-    void GoSchedule(ActionEvent event) throws IOException {
-        checkSchedule();
-    }
-
-    @FXML
-    void Logout(ActionEvent event) throws IOException {
-        checkLogout();
-    }
-
-
-    @FXML
-    void GoCourse(ActionEvent event) throws IOException {
-        checkCourse();
-    }
-
-
-    @FXML
-    void GoHelp(ActionEvent event) throws IOException {
-        checkHelp();
-
-    }
-
-    @FXML
-    void GoProfile(ActionEvent event) throws IOException {
-        checkProfile();
-    }
-
-    @FXML
-    void GoAbsence(ActionEvent event) throws IOException {
-        checkAbsence();
-
-    }
-
-    @FXML
-    void GoHome(ActionEvent event) throws IOException {
-        checkHome();
-
-    }
-
-    @FXML
-    void GoStudent(ActionEvent event) throws IOException {
-        checkAbsence();
-
-    }
-    @FXML
-    void Todo1(ActionEvent event) throws IOException {
-        checkTodo1();
-
-    }
-    @FXML
-    void Todo2(ActionEvent event) throws IOException {
-        checkTodo2();
-
-    }
-
-
-
-
 
 }

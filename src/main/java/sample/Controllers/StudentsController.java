@@ -253,8 +253,29 @@ public class StudentsController implements Initializable {
 
     @FXML
     void DeleteS(ActionEvent event) {
-       Student selected = StudentTableView.getSelectionModel().getSelectedItem();
-        model.deleteStudent(selected);
+//       Student selected = StudentTableView.getSelectionModel().getSelectedItem();
+//        model.deleteStudent(selected);
+
+
+//        public boolean delete(Student selected) {
+//            if(StudentDB.deleteStd(selected.getId()) != 0) {
+//                this.studentList.remove(selected);
+//                return true;
+//            }
+//            return false;
+//
+//
+//        }
+//        public static int deleteStd(int stdId) {
+//            //Declare a DELETE statement
+//            String updateStmt =
+//                    "   DELETE FROM info\n" +
+//                            "         WHERE id = ?;";
+//            //Execute UPDATE operation
+//            Object[] data = {stdId};
+//            return DBUtil.dbExecuteUpdatePrepared(updateStmt, data);
+//
+//        }
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -336,27 +357,22 @@ public class StudentsController implements Initializable {
     public void EditS(ActionEvent event) throws IOException {
         checkModifyS();
     }
-//
+
 //    public void DeleteS (ActionEvent event){
 //        DataBaseConnection connectnow = new DataBaseConnection();
 //        Connection connectDB = connectnow.getConnection();
 //
 //        String CodeProduit = SupProdCodeProduitTextField.getText();
-//        String ModifyIntoRegister = "DELETE FROM `Magasin`.`Produit` WHERE (`Code_Produit` = '"+CodeProduit+"');" ;
+//        String ModifyIntoRegister = "DELETE FROM `Managenie_db`.`students` WHERE (`Code_Produit` = '"+CodeProduit+"');" ;
 //
 //        if (SupProdCodeProduitTextField.getText().isBlank() == false || SupProdCodeProduitTextField.getText().isEmpty() == false ) {
 //            try {
 //                Statement statement = connectDB.createStatement();
 //                statement.executeUpdate(ModifyIntoRegister);
 //
-//                Parent root = FXMLLoader.load(getClass().getResource("CaisGestProduits.fxml"));
-//                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//                scene =  new Scene(root);
-//                stage.setScene(scene);
-//                stage.show();
 //
-//                SupProdMessage.setText("Produit Supprimé Avec Succes !");
-//                SupProdMessage.setTextFill(Color.BLUE);
+//                SupMessage.setText("Produit Supprimé Avec Succes !");
+//                SupMessage.setTextFill(Color.BLUE);
 //
 //            }catch (Exception e){
 //
@@ -365,14 +381,14 @@ public class StudentsController implements Initializable {
 //
 //            }
 //        }else {
-//            SupProdMessage.setText("Entrez Le Code Du Produit !");
-//            SupProdMessage.setTextFill(Color.RED);
+//            SupMessage.setText("Entrez Le Code Du Produit !");
+//            SupMessage.setTextFill(Color.RED);
 //        }
-//
-//    }
-
 
     }
+
+
+//    }
 
 //
 //    @FXML

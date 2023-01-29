@@ -13,8 +13,8 @@ import java.io.IOException;
 import static sample.Controllers.BasicController.*;
 import static sample.Controllers.BasicController.checkAbsence;
 
-public class TodoListController {
-    int i = 0;
+public class ListController {
+    int i=0;
 
     @FXML
     private Button Absence;
@@ -38,9 +38,6 @@ public class TodoListController {
     private Button Edit;
 
     @FXML
-    private ImageView EditIcon;
-
-    @FXML
     private Button Grades;
 
     @FXML
@@ -62,15 +59,22 @@ public class TodoListController {
     private Button Logout;
 
     @FXML
-    private ImageView LogoutIcon;
+    private Button Logout1;
+
     @FXML
-    private Pane MenuSlider;
+    private ImageView LogoutIcon;
+
+    @FXML
+    private Button MenuB;
 
     @FXML
     private Button MenuBOpen;
 
     @FXML
-    private ImageView MenuIcon;
+    private ImageView MenuIconOpen;
+
+    @FXML
+    private Pane MenuSlider;
 
     @FXML
     private Button Profile;
@@ -83,6 +87,9 @@ public class TodoListController {
 
     @FXML
     private ImageView TodolistIcon;
+
+    @FXML
+    private ImageView studentIcon;
 
     @FXML
     void Menu(ActionEvent event) {
@@ -170,19 +177,5 @@ public class TodoListController {
         checkAbsence();
 
     }
-    @FXML
-    void Todo1(ActionEvent event) throws IOException {
-        checkTodo1();
-
-    }
-    @FXML
-    void Todo2(ActionEvent event) throws IOException {
-        checkTodo2();
-
-    }
-
-
-
-
 
 }
