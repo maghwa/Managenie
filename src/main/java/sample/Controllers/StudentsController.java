@@ -26,12 +26,10 @@ import sample.Models.Student;
 import sample.Models.StudentModel;
 import javafx.application.Application;
 
+
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -147,7 +145,7 @@ public class StudentsController implements Initializable {
     private Label ModifMessage;
 
     @FXML
-    private TableView<Student> StudentTableView;
+    public  TableView<Student> StudentTableView;
 
     private Student student = new Student();
     ObservableList<Student> StudentObservableList = FXCollections.observableArrayList();
@@ -251,8 +249,8 @@ public class StudentsController implements Initializable {
 //        model.updateStudent(selected, nameTextField.getText());
 //    }
 
-    @FXML
-    void DeleteS(ActionEvent event) {
+    //@FXML
+   // void DeleteS(ActionEvent event) {
 //       Student selected = StudentTableView.getSelectionModel().getSelectedItem();
 //        model.deleteStudent(selected);
 
@@ -276,7 +274,7 @@ public class StudentsController implements Initializable {
 //            return DBUtil.dbExecuteUpdatePrepared(updateStmt, data);
 //
 //        }
-    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         DataBaseConnection connectNow = new DataBaseConnection();
@@ -312,8 +310,15 @@ public class StudentsController implements Initializable {
 
             // insert Values oF StudentObservableList in the StudentTableView
             StudentTableView.setItems(StudentObservableList);
+//
+//
+//            FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue().FirstNameProperty());
+//            LastNameColumn.setCellValueFactory(cellData -> cellData.getValue().LastNameProperty());
+//            EmailColumn.setCellValueFactory(cellData -> cellData.getValue().EmailProperty());
+//            MatriculeColumn.setCellValueFactory(cellData -> cellData.getValue().MatriculeProperty());
+//
 
-             //initial filtered list
+            //initial filtered list
             FilteredList<Student> filteredData = new FilteredList<>(StudentObservableList, b -> true);
 
             SearchField.textProperty().addListener((observable ,oldValue, newValue)-> {
@@ -355,10 +360,94 @@ public class StudentsController implements Initializable {
 
 
     public void EditS(ActionEvent event) throws IOException {
-        checkModifyS();
+//        // Get the selected object from the table
+//        Student student = StudentTableView.getSelectionModel().getSelectedItem();
+//
+//        //checkModifyS();
+//        Parent root = FXMLLoader.load(getClass().getResource("EditStudent.fxml"));
+//        // Create the scene
+//        Scene scene = new Scene(root);
+//        // Get the stage and set the scene
+//        Stage stage = (Stage) StudentTableView.getScene().getWindow();
+//        stage.setScene(scene);
+//
+//        Label FirstName= (Label) scene.lookup("#FirstNameField");
+//        FirstName.textProperty().bind(student.FirstNameProperty());
+//
+//        Label LastName= (Label) scene.lookup("#LastNameField");
+//        LastName.textProperty().bind(student.LastNameProperty());
+//
+//        Label Email= (Label) scene.lookup("#EmailField");
+//        Email.textProperty().bind(student.EmailProperty());
+//
+//        Label Matricule= (Label) scene.lookup("#MatriculeField");
+//        Matricule.textProperty().bind(student.MatriculeProperty());
+    }
+    public void LoadData() throws  IOException {
+        checkStudent();
+        StudentObservableList.clear();
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String StudentViewQuery = "SELECT first_name,last_name,email,matricule FROM students;";
+
+        try {
+
+            Statement statement = connectDB.createStatement();
+            ResultSet queryOutput = statement.executeQuery(StudentViewQuery);
+
+            while (queryOutput.next()) {
+
+
+                String queryFirstName = queryOutput.getString("first_name");
+                String queryLastName = queryOutput.getString("last_name");
+                String queryEmail = queryOutput.getString("email");
+                String queryMatricule = queryOutput.getString("matricule");
+
+                //Populate the Observable list of products
+                StudentObservableList.add(new Student(queryFirstName, queryLastName, queryEmail, queryMatricule));
+
+            }
+
+            // Correspending each Column in interface with column in database
+
+            FirstNameColumn.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
+            LastNameColumn.setCellValueFactory(new PropertyValueFactory<>("LastName"));
+            EmailColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
+            MatriculeColumn.setCellValueFactory(new PropertyValueFactory<>("Matricule"));
+
+
+            // insert Values oF StudentObservableList in the StudentTableView
+            StudentTableView.setItems(StudentObservableList);
+//
+//
+        } catch (SQLException e){
+        Logger.getLogger(StudentsController.class.getName()).log(Level.SEVERE , null , e);
+        e.printStackTrace();
+    }
     }
 
-//    public void DeleteS (ActionEvent event){
+   public void DeleteS (ActionEvent event) throws SQLException, IOException {
+       DataBaseConnection connectNow = new DataBaseConnection();
+       Connection connectDB = connectNow.getConnection();
+
+       // Get the selected object from the table
+       Student student1 = StudentTableView.getSelectionModel().getSelectedItem();
+
+// Delete the object from the database
+       String deleteSql = "DELETE FROM students WHERE email = ?;" ;
+       PreparedStatement pstmt = connectDB.prepareStatement(deleteSql);
+       pstmt.setString(1,  student1.getEmail());
+       pstmt.executeUpdate();
+
+// Delete the object from the table
+       checkStudent();
+       StudentTableView.getItems().remove(student1);
+       StudentTableView.refresh();
+
+   }
+
 //        DataBaseConnection connectnow = new DataBaseConnection();
 //        Connection connectDB = connectnow.getConnection();
 //

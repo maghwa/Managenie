@@ -181,7 +181,7 @@ public class ScheduleController {
     }
     @FXML
     void GoStudent(ActionEvent event)throws IOException {
-        checkAbsence();
+        checkStudent();
 
     }
 //    FileChooser fileChooser = new FileChooser();

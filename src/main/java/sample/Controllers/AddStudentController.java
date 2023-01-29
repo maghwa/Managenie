@@ -82,11 +82,11 @@ public class AddStudentController {
 //                stage.setScene(scene);
 //                stage.show();
 
-                AjouMessage.setText("Produit Ajouté Avec Succes !");
+                AjouMessage.setText("Student Sucesfully Added !");
                 AjouMessage.setTextFill(Color.GREEN);
 
             }else {
-                AjouMessage.setText("Veuillez Remplir Tous Les Cases");
+                AjouMessage.setText("Veuillez Remplir Toute Les Cases");
                 AjouMessage.setTextFill(Color.RED);
             }
 

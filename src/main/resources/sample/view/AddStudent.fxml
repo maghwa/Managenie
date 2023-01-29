@@ -53,13 +53,21 @@
             <Font name="Dubai Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="GoStudent" layoutX="321.0" layoutY="8.0" mnemonicParsing="false" onAction="#GoStudent" style="-fx-background-color: #b1d6f7;" text="Go back" />
-      <Label fx:id="AjouMessage" layoutX="179.0" layoutY="246.0" />
+      <Label fx:id="AjouMessage" layoutX="92.0" layoutY="325.0" prefHeight="18.0" prefWidth="206.0" textAlignment="CENTER" />
       <Label layoutX="58.0" layoutY="264.0" text="Course :" textFill="#b1d6f7">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <ChoiceBox fx:id="Courses" layoutX="164.0" layoutY="261.0" prefHeight="16.0" prefWidth="150.0" style="-fx-background-color: #b1d6f7;" />
+      <Button layoutX="337.0" layoutY="-3.0" mnemonicParsing="false" onAction="#GoStudent" style="-fx-background-color: #ffffff10;">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="40.0">
+               <image>
+                  <Image url="@../Icons/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

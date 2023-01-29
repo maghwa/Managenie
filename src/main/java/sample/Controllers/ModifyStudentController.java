@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sample.DataBase.DataBaseConnection;
 import sample.Models.Course;
+import sample.Models.Student;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -22,6 +23,9 @@ import java.sql.Statement;
 import static sample.Controllers.BasicController.*;
 
 public class ModifyStudentController {
+    DataBaseConnection connectnow = new DataBaseConnection();
+    Connection connectDB = connectnow.getConnection();
+
 
     @FXML
     private Label AjouMessage;
@@ -57,20 +61,15 @@ public class ModifyStudentController {
     @FXML
     void ValidAdd(ActionEvent event) {
 
-    }
-
-    public void EditS(ActionEvent event){
-    DataBaseConnection connectnow = new DataBaseConnection();
-    Connection connectDB = connectnow.getConnection();
 
 
-    String FirstName = FirstNameField.getText();
-    String LastName = LastNameField.getText();
-    String Email = EmailField.getText();
-    String Matricule = MatriculeField.getText();
+        String FirstName = FirstNameField.getText();
+        String LastName = LastNameField.getText();
+        String Email = EmailField.getText();
+        String Matricule = MatriculeField.getText();
 
-    String ModifyFields =" UPDATE `Managenie_db`.`student` SET `first_name` = '"+FirstName+"', `last_name` = '"+LastName +"',  `email` = '"+Email+"' WHERE (`matricule` = '"+Matricule+"');";
-    String ModifyIntoRegister = ModifyFields ;
+        String ModifyFields =" UPDATE `Managenie_db`.`student` SET `first_name` = '"+FirstName+"', `last_name` = '"+LastName +"',  `email` = '"+Email+"' WHERE (`matricule` = '"+Matricule+"');";
+        String ModifyIntoRegister = ModifyFields ;
 
     try {
         Statement statement = connectDB.createStatement();

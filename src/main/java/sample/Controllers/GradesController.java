@@ -149,8 +149,8 @@ public class GradesController implements Initializable {
                 DataBaseConnection connectNow = new DataBaseConnection();
                 Connection connectDB = connectNow.getConnection();
 
-                String GradeViewQuery = "SELECT Sid,Grade FROM Grades;";
-                String StudentViewQuery = "SELECT first_name,last_name WHERE Student_id== Sid;";
+                String GradeViewQuery = "SELECT S_id,Grade FROM Grades;";
+                String StudentViewQuery = "SELECT first_name,last_name WHERE Student_id== S_id;";
 
 
                 try {
@@ -163,7 +163,7 @@ public class GradesController implements Initializable {
 
 
                                 int queryStudent = queryOutput.getInt("Grade");
-                                int queryGrade = queryOutput.getInt("Sid");
+                                int queryGrade = queryOutput.getInt("S_id");
 
 
                                 //Populate the Observable list of products

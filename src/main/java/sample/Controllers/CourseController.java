@@ -168,7 +168,7 @@ public class CourseController {
     }
     @FXML
     void GoStudent(ActionEvent event)throws IOException {
-        checkAbsence();
+        checkStudent();
 
     }
     public void CourseDescrib(ActionEvent event) throws IOException{
