@@ -92,5 +92,21 @@ for example on the Absence Interface
 
 ![a1d0a445-727b-4d39-8097-87e21149bb11](https://user-images.githubusercontent.com/87017143/215354478-eb289bb9-0067-47e5-9e20-794476dac71a.jpg)
 
+### Schedule Interface:
+
+![01988475-3e16-4ae2-91f1-9c4dab580cb1](https://user-images.githubusercontent.com/87017143/215354579-7a686746-3c8f-4635-b1af-8daa045b6e60.jpg)
+ 
+===> you can upload any schedule file you want by clicking on the upload button on top 
+
+![d9d4a777-22f9-4444-9549-fd70ee9f7a4c](https://user-images.githubusercontent.com/87017143/215354605-609380c6-56f8-4fdd-aa77-28515ee02b4c.jpg)
+
+### Grades Interface:
+![a985e39e-158d-4fca-99a8-ee2e7cf3326b](https://user-images.githubusercontent.com/87017143/215354617-90b1d2aa-3f53-47b1-a827-678fce48ba3d.jpg)
+
+### Documentation/help Interface:
+
+
+
+
 
 
