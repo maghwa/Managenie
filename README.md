@@ -1,6 +1,9 @@
 # PROJECT IHM: MANAGENIE
-ManaGenie is a desktop  Management for professors: to notice the absence of students To add courses and grades ,to see their plannings and also to make a Todo list.
+ManaGenie is a desktop  Management Application for professors
+it helps them To add courses and grades , to add/modify/delete students ,to upload their plannings and also to make a Todo list, to notice the absence of students.
+
  our Logo:
+ 
  ![Capture_d_écran_2022-12-21_172551-removebg-preview](https://user-images.githubusercontent.com/87017143/215352576-bb1a8fcc-8909-47a3-95ad-43043d566104.png)
 
 ### Welcome Interface:
