@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="921.0" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ListController">
+   <children>
+      <ImageView fitHeight="640.0" fitWidth="1167.0" layoutX="-246.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Background_flou.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="MenuB" mnemonicParsing="false" style="-fx-background-color: #ffffff10;" />
+      <Button fx:id="Edit" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="38.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox layoutX="473.0" layoutY="96.0" prefHeight="26.0" prefWidth="291.0" AnchorPane.leftAnchor="473.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="96.0">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </HBox>
+      <Label layoutX="404.0" layoutY="70.0" text="To-Do list N°1">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Pane layoutX="212.0" layoutY="122.0" prefHeight="422.0" prefWidth="557.0" style="-fx-background-color: #b1d6f7; -fx-background-radius: 15;">
+         <children>
+            <Line endX="100.0" layoutX="324.0" layoutY="106.0" startX="-189.79998779296875" stroke="#0e1d56" />
+            <Label layoutX="65.0" layoutY="29.0" text="Creation date : " textFill="#0e1d56">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="96.0" layoutY="60.0" prefHeight="25.0" prefWidth="75.0" text="Due date :" textFill="#0e1d56">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <DatePicker layoutX="179.0" layoutY="60.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: TRANSPARENT;" />
+            <TextArea layoutX="50.0" layoutY="131.0" prefHeight="258.0" prefWidth="459.0" style="-fx-background-radius: TRANSPARENT;" />
+            <DatePicker layoutX="179.0" layoutY="29.0" showWeekNumbers="true" style="-fx-background-radius: 15; -fx-background-color: TRANSPARENT;" />
+         </children>
+      </Pane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="605.0" prefWidth="54.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="MenuSlider" layoutX="1.0" prefHeight="605.0" prefWidth="58.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="612.0" prefWidth="63.0">
+                     <children>
+                        <Button fx:id="Home" mnemonicParsing="false" onAction="#GoHome" prefHeight="43.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="HomeIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/home%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Calender" mnemonicParsing="false" onAction="#GoSchedule" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="CalenderIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/calendar%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Courses" mnemonicParsing="false" onAction="#GoCourse" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="CourseIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/books.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Grades" mnemonicParsing="false" onAction="#GoGrades" prefHeight="46.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="GradesIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/test.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Todolist" mnemonicParsing="false" onAction="#GoTodoList" prefHeight="56.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="TodolistIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/task.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Absence" mnemonicParsing="false" onAction="#GoAbsence" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textAlignment="CENTER" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="AbsenceIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/absent%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Logout1" mnemonicParsing="false" onAction="#GoStudent" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="studentIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/graduated.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Profile" mnemonicParsing="false" onAction="#GoProfile" prefHeight="42.0" prefWidth="34.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="ProfileIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/user%20(2).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Help" mnemonicParsing="false" onAction="#GoHelp" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="HelpIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/help-web-button%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Logout" mnemonicParsing="false" onAction="#Logout" prefHeight="48.0" prefWidth="57.0" style="-fx-background-color: #0e1d56; -fx-border-radius: 25;" textFill="#b1d6f7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="LogoutIcon" fitHeight="28.0" fitWidth="28.0">
+                                 <image>
+                                    <Image url="@../Icons/logout%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="10.0" top="60.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="60.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Pane>
+            <Button fx:id="MenuBOpen" layoutX="9.0" layoutY="10.0" mnemonicParsing="false" onAction="#Menu" style="-fx-background-color: #ffffff10;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fx:id="MenuIconOpen" fitHeight="28.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../Icons/menu-burger%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
