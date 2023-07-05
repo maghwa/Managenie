@@ -1,6 +1,6 @@
 # PROJECT IHM: MANAGENIE
-ManaGenie is a desktop  Management Application for professors
-it helps them To add courses and grades , to add/modify/delete students ,to upload their plannings and also to make a Todo list, to notice the absence of students.
+ManaGenie is a desktop management application for professors
+it helps them To add courses and grades , to add/modify, or delete students, ,to upload their plans, and also to make a to-do list, to notice the absence of students.
 
  our Logo:
  
@@ -8,7 +8,7 @@ it helps them To add courses and grades , to add/modify/delete students ,to uplo
 
 ### Welcome Interface:
 ![6004d231-5c4b-491e-9065-3b4be90816e9](https://user-images.githubusercontent.com/87017143/215352708-5bd18f3a-cda7-4203-8844-01178b3dfa64.jpg)
- when you click on 'Login button' it leads you to Login Interface  where you can Log in , the other Button is for the SignUp.You found Quote of the day with animation and generated randomly
+When you click on 'Login button' it leads you to Login login interface where you can Log in , the other Button is for the SignUp.You found Quote of the day with animation and generated randomly
  
  ### SignUp Interface:
  
